@@ -2,18 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c307bae3-9c01-4825-addb-c88cb6ddd38e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/userDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webElementsProperties/createFinalUser.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webElementsProperties/loginElements.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webElementsProperties/newBooking.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/UserLocationSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/00_HappyPath/00_01_Reservation.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/Environment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/CreateUserPagePOM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/LoginPagePOM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/BookingPanelKeys.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/ElementAttributeKeys.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/LoginFormKeys.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/WebComponentKeys.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/PrePostActions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/booking/BookingValidations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/login/LoginActions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/login/LoginValidations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/Enviroment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/Hooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/WebSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/WebSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/KeyWebElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/CreateFinalUserFromKeys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webElementsProperties/createFinalUser.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webElementsProperties/createFinalUserForm.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webElementsProperties/loginElements.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webElementsProperties/loginForm.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webElementsProperties/newBooking.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webElementsProperties/bookingPanel.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/cucumberRunner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/cucumberRunner/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/LoginSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/UserLocationSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/00_HappyPath/00_01_Reservation.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/00_HappyPath/00_01_Reservation.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/01_UserManager/01_Create_User.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/01_UserManager/01_Create_User.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/01_UserManager/01_Login_Test.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/01_UserManager/01_Login_Test.feature" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,51 +39,54 @@
     <session id="841827212">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.closed" value="15" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.14" value="1" />
-          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.15" value="2" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.2" value="2" />
-          <entry key="project.open.time.20" value="1" />
-          <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.20" value="2" />
+          <entry key="project.open.time.27" value="2" />
           <entry key="project.open.time.3" value="2" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.open.time.33" value="1" />
+          <entry key="project.opened" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="1" />
-          <entry key="feature" value="5" />
-          <entry key="java" value="32" />
-          <entry key="properties" value="9" />
+          <entry key="class" value="3" />
+          <entry key="feature" value="11" />
+          <entry key="java" value="96" />
+          <entry key="properties" value="27" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="Cucumber" value="5" />
-          <entry key="JAVA" value="32" />
-          <entry key="Properties" value="9" />
+          <entry key="CLASS" value="3" />
+          <entry key="Cucumber" value="11" />
+          <entry key="JAVA" value="96" />
+          <entry key="Properties" value="27" />
           <entry key="XML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="60" />
-          <entry key="feature" value="243" />
-          <entry key="java" value="3070" />
-          <entry key="properties" value="557" />
+          <entry key="dummy" value="123" />
+          <entry key="feature" value="427" />
+          <entry key="java" value="7468" />
+          <entry key="properties" value="729" />
           <entry key="xml" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Cucumber" value="243" />
-          <entry key="JAVA" value="3070" />
-          <entry key="PLAIN_TEXT" value="60" />
-          <entry key="Properties" value="557" />
+          <entry key="Cucumber" value="427" />
+          <entry key="JAVA" value="7468" />
+          <entry key="PLAIN_TEXT" value="123" />
+          <entry key="Properties" value="729" />
           <entry key="XML" value="10" />
         </counts>
       </usages-collector>
@@ -79,91 +95,94 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/loginElements.properties">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/login/LoginActions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+            <state relative-caret-position="595">
+              <caret line="50" column="69" lean-forward="true" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="69" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/enviroment/defaultEnvironment.properties">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/loginForm.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="45" selection-start-column="45" selection-end-column="45" />
+            <state relative-caret-position="153">
+              <caret line="9" column="61" lean-forward="true" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/CreateUserPagePOM.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="160" column="112" selection-start-line="160" selection-start-column="112" selection-end-line="160" selection-end-column="112" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/CreateFinalUserFromKeys.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="35" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/userDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/WebSelector.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/login/LoginValidations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="1598">
+              <caret line="105" column="45" selection-start-line="105" selection-start-column="45" selection-end-line="105" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/KeyWebElements.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="26" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/newBooking.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/features/00_HappyPath/00_01_Reservation.feature">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/features/01_UserManager/01_Login_Test.feature">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" column="21" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="21" />
+              <caret line="1" column="6" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/cucumberRunner/TestRunner.java">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/features/01_UserManager/01_Create_User.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="221">
+              <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/UserLocationSteps.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/createFinalUserForm.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="1" column="38" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/LoginSteps.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/LoginPagePOM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
+            <state relative-caret-position="296">
+              <caret line="65" selection-start-line="65" selection-end-line="67" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -184,6 +203,9 @@
     <findStrings>
       <find>public String getIdElement\(\) \{\n        return idElement\;\n    \}\n\n    public String getNameElement\(\) \{ return nameElement\; \}\n\n    public String getCcsSelectorElement\(\) \{ return ccsSelectorElement\; \}\n\n    public String getClassElementName\(\) \{ return classElementName\; \}\n    \n    public String getType\(\) \{\n        return type\;\n    \}\n\n    public String getText\(\) \{\n        return text\;\n    \}\n    \n    public String getPlaceholder\(\) \{ return placeholder\; \}</find>
       <find>loginAccestToCreateUser</find>
+      <find>KeyWebElements</find>
+      <find>setdefaultaddress</find>
+      <find>13</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -192,31 +214,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/Hooks.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/Credentials.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/userDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/KeyElementsCreateUserPage.java" />
         <option value="$PROJECT_DIR$/src/test/resources/features/01_Login_Test.feature" />
         <option value="$PROJECT_DIR$/src/test/resources/features/01_Create_User.feature" />
         <option value="$PROJECT_DIR$/src/test/resources/features/00_HappyPath/00_01_HappyPath.feature" />
         <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/KeyElementsLocationUserPage.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/features/00_HappyPath/00_01_Reservation.feature" />
         <option value="$PROJECT_DIR$/src/main/resources/webelements.properties" />
         <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/utilsType/FileWriter.java" />
         <option value="$PROJECT_DIR$/src/main/resources/webElementsProperties/LocationUserElements.properties" />
         <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/utilsType/WebSelector.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/KeyElementsLoginPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/UserLocationSteps.java" />
         <option value="$PROJECT_DIR$/src/main/resources/webElementsProperties/createFinalUser.properties" />
-        <option value="$PROJECT_DIR$/src/test/resources/enviroment/defaultEnvironment.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/webElementsProperties/loginPageElements.properties" />
-        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/cucumberRunner/TestRunner.java" />
         <option value="$PROJECT_DIR$/src/main/resources/webElementsProperties/newReservation.properties" />
-        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/LoginSteps.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/WebSelector.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/KeyWebElements.java" />
         <option value="$PROJECT_DIR$/src/main/resources/webElementsProperties/newBooking.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/KeyWebComponents.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/keyElementAttributes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/KeyLoginForm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/createFinalUserFrom.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/WebElementKeys.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/WebComponentKeys.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/UserLocationSteps.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/CreateFinalUserFromKeys.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/LoginFormKeys.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/BookingActions.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/enviroment/defaultEnvironment.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/ElementAttributeKeys.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/WebSelector.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/BookingPanelKeys.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/features/00_HappyPath/00_01_Reservation.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/booking/BookingActions.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/webElementsProperties/bookingPanel.properties" />
+        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/booking/BookingValidations.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/loginPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/loginPagePOM.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/features/01_UserManager/01_Login_Test.feature" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/Enviroment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/Environment.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/cucumberRunner/PrePostActions.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/LoginSteps.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/login/LoginSteps.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/Hooks.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/PrePostActions.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/webElementsProperties/loginForm.properties" />
+        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/cucumberRunner/TestRunner.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/login/LoginActions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/LoginPagePOM.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/features/01_UserManager/01_Create_User.feature" />
+        <option value="$PROJECT_DIR$/src/main/resources/webElementsProperties/createFinalUserForm.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/CreateUserPagePOM.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/login/LoginValidations.java" />
       </list>
     </option>
   </component>
@@ -238,15 +286,15 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-4" />
-    <option name="y" value="-4" />
-    <option name="width" value="576" />
-    <option name="height" value="310" />
+    <option name="x" value="-7" />
+    <option name="y" value="-7" />
+    <option name="width" value="1295" />
+    <option name="height" value="695" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="PackagesPane" proportions="" version="1">
-      <autoscrollFromSource Scope="true" PackagesPane="true" />
+    <navigator proportions="" version="1">
+      <autoscrollFromSource Scope="true" PackagesPane="true" ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -254,104 +302,340 @@
         <subPane>
           <expand>
             <path>
-              <item name="basicSeleniumWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ludaWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
               <item name="ludaWebDriverTest" type="616d4139:PackageViewModuleNode" />
             </path>
             <path>
-              <item name="basicSeleniumWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ludaWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
               <item name="ludaWebDriverTest" type="616d4139:PackageViewModuleNode" />
               <item name="com.luda.webDriverTest" type="1f31426a:PackageElementNode" />
             </path>
             <path>
-              <item name="basicSeleniumWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ludaWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ludaWebDriverTest" type="616d4139:PackageViewModuleNode" />
+              <item name="com.luda.webDriverTest" type="1f31426a:PackageElementNode" />
+              <item name="beans" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
               <item name="ludaWebDriverTest" type="616d4139:PackageViewModuleNode" />
               <item name="com.luda.webDriverTest" type="1f31426a:PackageElementNode" />
               <item name="cucumberRunner" type="1f31426a:PackageElementNode" />
             </path>
             <path>
-              <item name="basicSeleniumWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ludaWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
               <item name="ludaWebDriverTest" type="616d4139:PackageViewModuleNode" />
               <item name="com.luda.webDriverTest" type="1f31426a:PackageElementNode" />
               <item name="enviroment" type="1f31426a:PackageElementNode" />
             </path>
             <path>
-              <item name="basicSeleniumWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ludaWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ludaWebDriverTest" type="616d4139:PackageViewModuleNode" />
+              <item name="com.luda.webDriverTest" type="1f31426a:PackageElementNode" />
+              <item name="exception" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ludaWebDriverTest" type="616d4139:PackageViewModuleNode" />
+              <item name="com.luda.webDriverTest" type="1f31426a:PackageElementNode" />
+              <item name="pom" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
               <item name="ludaWebDriverTest" type="616d4139:PackageViewModuleNode" />
               <item name="com.luda.webDriverTest" type="1f31426a:PackageElementNode" />
               <item name="stepDefinition" type="1f31426a:PackageElementNode" />
             </path>
             <path>
-              <item name="basicSeleniumWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ludaWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ludaWebDriverTest" type="616d4139:PackageViewModuleNode" />
+              <item name="com.luda.webDriverTest" type="1f31426a:PackageElementNode" />
+              <item name="stepDefinition" type="1f31426a:PackageElementNode" />
+              <item name="booking" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
               <item name="ludaWebDriverTest" type="616d4139:PackageViewModuleNode" />
               <item name="com.luda.webDriverTest" type="1f31426a:PackageElementNode" />
               <item name="utilsType" type="1f31426a:PackageElementNode" />
             </path>
             <path>
-              <item name="basicSeleniumWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ludaWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
               <item name="ludaWebDriverTest" type="616d4139:PackageViewModuleNode" />
               <item name="com.luda.webDriverTest" type="1f31426a:PackageElementNode" />
               <item name="utilsType" type="1f31426a:PackageElementNode" />
               <item name="constans" type="1f31426a:PackageElementNode" />
             </path>
             <path>
-              <item name="basicSeleniumWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ludaWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
               <item name="ludaWebDriverTest" type="616d4139:PackageViewModuleNode" />
               <item name="enviroment" type="1f31426a:PackageElementNode" />
             </path>
             <path>
-              <item name="basicSeleniumWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
-              <item name="ludaWebDriverTest" type="616d4139:PackageViewModuleNode" />
-              <item name="features" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
-              <item name="ludaWebDriverTest" type="616d4139:PackageViewModuleNode" />
-              <item name="features" type="1f31426a:PackageElementNode" />
-              <item name="00_HappyPath" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
-              <item name="ludaWebDriverTest" type="616d4139:PackageViewModuleNode" />
-              <item name="features" type="1f31426a:PackageElementNode" />
-              <item name="01_UserManager" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ludaWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
               <item name="ludaWebDriverTest" type="616d4139:PackageViewModuleNode" />
               <item name="webElementsProperties" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ludaWebDriverTest" type="616d4139:PackageViewModuleNode" />
+              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ludaWebDriverTest" type="616d4139:PackageViewModuleNode" />
+              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
+              <item name="java" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ludaWebDriverTest" type="616d4139:PackageViewModuleNode" />
+              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
+              <item name="java" type="1f31426a:PackageElementNode" />
+              <item name="util" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webDriverTest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="beans" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="enviroment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="pom" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="utilsType" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="utilsType" type="462c0819:PsiDirectoryNode" />
+              <item name="constans" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="webElementsProperties" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webDriverTest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="cucumberRunner" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="stepDefinition" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="stepDefinition" type="462c0819:PsiDirectoryNode" />
+              <item name="booking" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="stepDefinition" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+              <item name="01_UserManager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: io.cucumber:cucumber-junit:3.0.2" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: io.cucumber:cucumber-junit:3.0.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="cucumber-junit-3.0.2.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: io.cucumber:cucumber-junit:3.0.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="cucumber-junit-3.0.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="cucumber" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: io.cucumber:cucumber-junit:3.0.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="cucumber-junit-3.0.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="cucumber" type="462c0819:PsiDirectoryNode" />
+              <item name="junit" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
             <path>
-              <item name="basicSeleniumWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="ludaWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="ludaWebDriverTest" type="2674bda8:ScopeViewTreeModel$GroupNode" />
             </path>
             <path>
-              <item name="basicSeleniumWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="ludaWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="ludaWebDriverTest" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="basicSeleniumWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="ludaWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="ludaWebDriverTest" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="basicSeleniumWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="ludaWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="ludaWebDriverTest" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="basicSeleniumWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="ludaWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="ludaWebDriverTest" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
@@ -359,7 +643,7 @@
               <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="basicSeleniumWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="ludaWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="ludaWebDriverTest" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
@@ -368,7 +652,7 @@
               <item name="luda" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="basicSeleniumWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="ludaWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="ludaWebDriverTest" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
@@ -378,7 +662,7 @@
               <item name="webDriverTest" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="basicSeleniumWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="ludaWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="ludaWebDriverTest" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
@@ -389,7 +673,7 @@
               <item name="utilsType" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="basicSeleniumWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="ludaWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="ludaWebDriverTest" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
@@ -400,184 +684,19 @@
               <item name="utilsType" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="constans" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="ludaWebDriverTest" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="ludaWebDriverTest" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="webElementsProperties" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="ludaWebDriverTest" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="ludaWebDriverTest" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="ludaWebDriverTest" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="ludaWebDriverTest" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="luda" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="ludaWebDriverTest" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="luda" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="webDriverTest" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="ludaWebDriverTest" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="luda" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="webDriverTest" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="stepDefinition" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="webDriverTest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="webDriverTest" type="462c0819:PsiDirectoryNode" />
-              <item name="utilsType" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="webDriverTest" type="462c0819:PsiDirectoryNode" />
-              <item name="utilsType" type="462c0819:PsiDirectoryNode" />
-              <item name="constans" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="webElementsProperties" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="webDriverTest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="basicSeleniumWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ludaWebDriverTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="webDriverTest" type="462c0819:PsiDirectoryNode" />
-              <item name="stepDefinition" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533741183255" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534179727781" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../amazonTest" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -585,21 +704,27 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\david\sourcecode\ludaWebDriverTest\src\main\resources\webElementsProperties" />
+      <recent name="C:\Users\david\sourcecode\ludaWebDriverTest\src\test\resources\features\00_UserManager" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.luda.webDriverTest.stepDefinition.login" />
+      <recent name="com.luda.webDriverTest.stepDefinition" />
+      <recent name="com.luda.webDriverTest.stepDefinition.booking" />
       <recent name="com.luda.webDriverTest.utilsType" />
+      <recent name="com.luda.webDriverTest.utilsType.constans" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.luda.webDriverTest.pom" />
+      <recent name="com.luda.webDriverTest.stepDefinition.login" />
+      <recent name="com.luda.webDriverTest.stepDefinition.booking" />
       <recent name="com.luda.webDriverTest.utilsType.constans" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\david\sourcecode\ludaWebDriverTest\src\main\resources\webElementsProperties" />
       <recent name="C:\Users\david\sourcecode\ludaWebDriverTest\src\test\resources\features\00_HappyPath" />
       <recent name="C:\Users\david\sourcecode\ludaWebDriverTest\src\test\resources\features" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.luda.webDriverTest.utilsType.constans" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\david\sourcecode\ludaWebDriverTest\src\main\resources\webElementsProperties" />
-      <recent name="C:\Users\david\sourcecode\ludaWebDriverTest\src\test\resources\features\00_UserManager" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -619,7 +744,7 @@
       <module name="ludaWebDriverTest" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.luda.webDriverTest.cucumberRunner.*" />
+          <option name="PATTERN" value="com.luda.webDriverTest.stepDefinition.login.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -655,55 +780,61 @@
       <workItem from="1533708968027" duration="666000" />
       <workItem from="1533709830042" duration="3312000" />
       <workItem from="1533713908007" duration="11695000" />
-      <workItem from="1533732800087" duration="1774000" />
+      <workItem from="1533732800087" duration="2695000" />
+      <workItem from="1533742994779" duration="10972000" />
+      <workItem from="1533795453510" duration="26735000" />
+      <workItem from="1533831993507" duration="8548000" />
+      <workItem from="1533880879178" duration="27829000" />
+      <workItem from="1533922793140" duration="963000" />
+      <workItem from="1534069533060" duration="8300000" />
+      <workItem from="1534140389947" duration="31155000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestRunner - 2018.08.08 at 11h 27m 31s.xml">
+    <history-entry file="TestRunner - 2018.08.13 at 15h 50m 59s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRunner - 2018.08.08 at 11h 28m 41s.xml">
+    <history-entry file="TestRunner - 2018.08.13 at 16h 25m 50s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRunner - 2018.08.08 at 11h 31m 05s.xml">
+    <history-entry file="TestRunner - 2018.08.13 at 16h 28m 16s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRunner - 2018.08.08 at 11h 32m 32s.xml">
+    <history-entry file="TestRunner - 2018.08.13 at 16h 28m 33s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRunner - 2018.08.08 at 12h 28m 03s.xml">
+    <history-entry file="TestRunner - 2018.08.13 at 18h 39m 46s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRunner - 2018.08.08 at 12h 28m 33s.xml">
+    <history-entry file="TestRunner - 2018.08.13 at 18h 40m 14s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRunner - 2018.08.08 at 12h 37m 50s.xml">
+    <history-entry file="TestRunner - 2018.08.13 at 18h 43m 28s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRunner - 2018.08.08 at 13h 17m 36s.xml">
+    <history-entry file="TestRunner - 2018.08.13 at 18h 54m 26s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRunner - 2018.08.08 at 13h 52m 30s.xml">
+    <history-entry file="TestRunner - 2018.08.13 at 18h 59m 15s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRunner - 2018.08.08 at 13h 57m 19s.xml">
+    <history-entry file="TestRunner - 2018.08.13 at 19h 00m 38s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70706000" />
+    <option name="totallyTimeSpent" value="186129000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.22441365" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.15884861" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="1" />
@@ -711,7 +842,7 @@
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.53846157" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.4073673" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
@@ -727,6 +858,36 @@
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="0" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.15884861" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.4073673" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32936078" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Database" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="4" weight="0.32995737" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -742,42 +903,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/userDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="13" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/Enviroment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/Hooks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="83" column="48" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/util/Properties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="967" column="18" selection-start-line="967" selection-start-column="18" selection-end-line="967" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/KeyElementsLocationUserPage.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/resources/features/01_UserManager/01_Login_Test.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/EnviromentConstantsNames.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -793,6 +919,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/util/Properties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2778">
+          <caret line="340" column="8" selection-start-line="340" selection-start-column="8" selection-end-line="340" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/utilsType/FileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="61" column="40" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/WebElementKeys.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.13.0/selenium-api-3.13.0.jar!/org/openqa/selenium/Keys.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="34" column="14" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/enviroment/defaultEnvironment.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/features/00_HappyPath/00_01_Reservation.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="96" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/booking/BookingActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1683">
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/bookingPanel.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/booking/BookingValidations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="719">
+          <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/BookingPanelKeys.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/BrowserCodes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -800,108 +996,252 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/features/01_UserManager/01_Create_User.feature">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/WebComponentKeys.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="18" />
+        <state relative-caret-position="85">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/createFinalUser.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/utilsType/FileWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="58" column="22" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/loginElements.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/ElementAttributeKeys.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/enviroment/defaultEnvironment.properties">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-junit/3.0.2/cucumber-junit-3.0.2.jar!/cucumber/api/junit/Cucumber.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="45" selection-start-column="45" selection-end-column="45" />
+        <state relative-caret-position="173">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/cucumberRunner/TestRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/LoginSteps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/KeyWebElements.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/newBooking.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/LoginFormKeys.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/features/00_HappyPath/00_01_Reservation.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="21" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/UserLocationSteps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/WebSelector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="671">
+          <caret line="56" column="18" lean-forward="true" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/Hooks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="100" column="29" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1510#1511#0" expanded="true" />
+            <element signature="e#1535#1536#0" expanded="true" />
+            <element signature="e#1598#1599#0" expanded="true" />
+            <element signature="e#1639#1640#0" expanded="true" />
+            <element signature="e#2826#2827#0" expanded="true" />
+            <element signature="e#2859#2860#0" expanded="true" />
+            <element signature="e#2916#2917#0" expanded="true" />
+            <element signature="e#2953#2954#0" expanded="true" />
+            <element signature="e#3052#3053#0" expanded="true" />
+            <element signature="e#3084#3085#0" expanded="true" />
+            <element signature="e#3125#3126#0" expanded="true" />
+            <element signature="e#3159#3160#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/Environment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#907#908#0" expanded="true" />
+            <element signature="e#928#929#0" expanded="true" />
+            <element signature="e#958#959#0" expanded="true" />
+            <element signature="e#979#980#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/PrePostActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="634">
+          <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/cucumberRunner/TestRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/userDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/LoginPagePOM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="65" selection-start-line="65" selection-end-line="67" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/features/01_UserManager/01_Create_User.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/createFinalUserForm.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="38" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/CreateFinalUserFromKeys.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/login/LoginActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="50" column="69" lean-forward="true" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/loginForm.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="61" lean-forward="true" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/features/01_UserManager/01_Login_Test.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="6" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/CreateUserPagePOM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="160" column="112" selection-start-line="160" selection-start-column="112" selection-end-line="160" selection-end-column="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/login/LoginValidations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="105" column="45" selection-start-line="105" selection-start-column="45" selection-end-line="105" selection-end-column="45" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>ludaWebDriverTest</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: ch.qos.logback:logback-classic:1.0.13</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

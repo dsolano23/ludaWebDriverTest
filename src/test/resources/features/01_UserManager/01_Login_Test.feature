@@ -1,3 +1,4 @@
+@smokeTest
 @login
 Feature: Login Action
 
@@ -6,6 +7,7 @@ Feature: Login Action
     Given User Navigate to Home Page
     #When User Navigate to LogIn Page
 
+  @login01
   Scenario Outline: Successful Login with Valid Credentials
 
     When I tried to login with <UserName> and <Password>
@@ -17,6 +19,7 @@ Feature: Login Action
       | farmacia    | Luda2017 |
       | laboratorio | Luda2017 |
 
+  @login02
   Scenario Outline: Successful Login with invalid Credentials
 
     When I tried to login with <UserName> and <Password>

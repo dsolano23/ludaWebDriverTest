@@ -1,10 +1,11 @@
-
+@smokeTest
 Feature: Create User
 
   @createFinalUser
   Scenario Outline: Check submit button Create Final User
     Given User Navigate to Home Page
     And User Navigate to CreateFinalUser Page
+    Then The look and feel of the page Create User is correct
     When I filled the form with the data idUsername: <idUserName>, email: <email>, password: <password>, confirmPWD: <confirmPWD>, name: <name>, surname: <surName>, age: <age>, phone: <phone>
     Then The create user button <available> available
 

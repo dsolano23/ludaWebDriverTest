@@ -1,25 +1,23 @@
 package com.luda.webDriverTest.cucumberRunner;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
 import com.luda.webDriverTest.enviroment.BrowserCodes;
-import com.luda.webDriverTest.enviroment.Enviroment;
+import com.luda.webDriverTest.enviroment.Environment;
 import com.luda.webDriverTest.enviroment.Hooks;
 import com.luda.webDriverTest.exception.NotFoundResourceException;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.runner.RunWith;
-
 import com.luda.webDriverTest.utilsType.FileWriter;
-
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;
 import net.masterthought.cucumber.Reportable;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.runner.RunWith;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RunWith(Cucumber.class)
 
@@ -32,7 +30,7 @@ import net.masterthought.cucumber.Reportable;
 						},
 		
 				//Used only if you want run a specific feature by tag : @login, @search or @filter
-				tags = {"@happyPathReservation"},
+				tags = {"@createFinalUser"},
 				
 				features = {"src/test/resources/features"},
 				glue = {"com.luda.webDriverTest.stepDefinition"}
@@ -42,36 +40,28 @@ public class TestRunner {
 	
 	private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(TestRunner.class);
 	
-	
+
 		@BeforeClass
-		public static void startEnviroment() throws Exception {
+        public static void startEnvironment() throws Exception {
+
 			if (FileWriter.getEnvProps().getProperty(BrowserCodes.BROWSER) != null && FileWriter.getEnvProps().getProperty(BrowserCodes.BROWSER) != null) {
 				String browser = FileWriter.getEnvProps().getProperty(BrowserCodes.BROWSER);
 				String mainURL = "";
-		    	Enviroment enviroment = new Enviroment(browser, mainURL );
-		    	    	
+		    	Environment environment = new Environment(browser, mainURL );
 		    	LOGGER.debug("Generating masterthought HTML reports .......");
-		    	Hooks.setEnviroment(enviroment);
-		    	
+		    	Hooks.setEnvironment(environment);
+
 		        LOGGER.info("*************************************");
-
-		        LOGGER.debug("Called openBrowser(beforeScenario)");
-
-		        // Clean all residual configuration test before each execution
-		        Hooks.getWebDriver().manage().window().maximize();
-		        Hooks.getWebDriver().manage().deleteAllCookies();
-		        Hooks.getWebDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		        
 			}
 
 		}
-		
-   
-		@AfterClass	
-	    public static void renerateHTMLReport() throws InterruptedException, NotFoundResourceException {
-			
+
+
+		@AfterClass
+	    public static void generateHTMLReport() throws InterruptedException, NotFoundResourceException {
+
 	        LOGGER.debug("Generating masterthought HTML reports .......");
-	        
+
 			File reportOutputDirectory = new File("target");
 			List<String> jsonFiles = new ArrayList<>();
 			jsonFiles.add("target/cucumber.json");
@@ -83,7 +73,7 @@ public class TestRunner {
 
 			Configuration configuration = new Configuration(reportOutputDirectory, projectName);
 			// optional configuration
-			
+
 			configuration.setParallelTesting(parallelTesting);
 			configuration.setRunWithJenkins(runWithJenkins);
 			configuration.setBuildNumber(buildNumber);
@@ -98,7 +88,7 @@ public class TestRunner {
 			// if report has failed features, undefined steps etc
 			LOGGER.debug("Generated Masterthought HTML reports");
 
-			Hooks.getWebDriver().close();
+
 	    }
     }
 
