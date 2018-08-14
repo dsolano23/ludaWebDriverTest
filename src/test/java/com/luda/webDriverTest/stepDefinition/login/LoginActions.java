@@ -57,59 +57,9 @@ public class LoginActions {
         createUserPage.setSurname(surname);
         createUserPage.setAge(age);
         createUserPage.setPhone(phone);
-
-        /*
-        String keyWebComponent = WebComponentKeys.createFinalUserForm.name();
-        String keyWebElement = CreateFinalUserFromKeys.InsertIdUser.name();
-        String attribute = ElementAttributeKeys.placeholder.name();
-
-        WebElement insertIdUserField = Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(WebSelector.getElementAttribute(keyWebComponent, keyWebElement)));
-        Assert.assertEquals(WebSelector.getElementAttribute(keyWebComponent, keyWebElement, attribute ).toLowerCase(), insertIdUserField.getAttribute("placeholder").toLowerCase());
-        insertIdUserField.clear();
-        insertIdUserField.sendKeys(idUserName);
-
-        keyWebElement = CreateFinalUserFromKeys.InsertEmail.name();
-        WebElement insertEmail = Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(WebSelector.getElementAttribute(keyWebComponent, keyWebElement)));
-        Assert.assertEquals(WebSelector.getElementAttribute(keyWebComponent, keyWebElement, attribute ).toLowerCase(), insertEmail.getAttribute("placeholder").toLowerCase());
-        insertEmail.clear();
-        insertEmail.sendKeys(email);
-
-        keyWebElement = CreateFinalUserFromKeys.InsertPassword.name();
-        WebElement insertPassword = Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(WebSelector.getElementAttribute(keyWebComponent, keyWebElement)));
-        Assert.assertEquals(WebSelector.getElementAttribute(keyWebComponent, keyWebElement, attribute ).toLowerCase(), insertPassword.getAttribute("placeholder").toLowerCase());
-        insertPassword.clear();
-        insertPassword.sendKeys(password);
-
-        keyWebElement = CreateFinalUserFromKeys.InsertConfirmPassword.name();
-        WebElement insertConfirmpwd = Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(WebSelector.getElementAttribute(keyWebComponent, keyWebElement)));
-        Assert.assertEquals(WebSelector.getElementAttribute(keyWebComponent, keyWebElement, attribute ).toLowerCase(), insertConfirmpwd.getAttribute("placeholder").toLowerCase());
-        insertConfirmpwd.clear();
-        insertConfirmpwd.sendKeys(confirmPWD);
-
-        keyWebElement = CreateFinalUserFromKeys.InsertUserName.name();
-        WebElement insertName = Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(WebSelector.getElementAttribute(keyWebComponent, keyWebElement)));
-        Assert.assertEquals(WebSelector.getElementAttribute(keyWebComponent, keyWebElement, attribute ).toLowerCase(), insertName.getAttribute("placeholder").toLowerCase());
-        insertName.clear();
-        insertName.sendKeys(name);
-
-        keyWebElement = CreateFinalUserFromKeys.InsertUserSurname.name();
-        WebElement insertSurname = Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(WebSelector.getElementAttribute(keyWebComponent, keyWebElement)));
-        Assert.assertEquals(WebSelector.getElementAttribute(keyWebComponent, keyWebElement, attribute ).toLowerCase(), insertSurname.getAttribute("placeholder").toLowerCase());
-        insertSurname.clear();
-        insertSurname.sendKeys(surname);
-
-        keyWebElement = CreateFinalUserFromKeys.InsertAge.name();
-        WebElement insertAge = Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(WebSelector.getElementAttribute(keyWebComponent, keyWebElement)));
-        Assert.assertEquals(WebSelector.getElementAttribute(keyWebComponent, keyWebElement, attribute ).toLowerCase(), insertAge.getAttribute("placeholder").toLowerCase());
-        insertAge.clear();
-        insertAge.sendKeys(age);
-
-        keyWebElement = CreateFinalUserFromKeys.InsertPhone.name();
-        WebElement insertPhone = Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(WebSelector.getElementAttribute(keyWebComponent, keyWebElement)));
-        Assert.assertEquals(WebSelector.getElementAttribute(keyWebComponent, keyWebElement, attribute ).toLowerCase(), insertPhone.getAttribute("placeholder").toLowerCase());
-        insertPhone.clear();
-        insertPhone.sendKeys(phone);*/
     }
+
+
 
 }
 

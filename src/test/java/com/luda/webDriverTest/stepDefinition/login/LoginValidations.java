@@ -2,16 +2,17 @@ package com.luda.webDriverTest.stepDefinition.login;
 
 import com.luda.webDriverTest.enviroment.Hooks;
 import com.luda.webDriverTest.pom.CreateUserPagePOM;
+import com.luda.webDriverTest.pom.ElementDTO;
 import com.luda.webDriverTest.pom.LoginPagePOM;
 import com.luda.webDriverTest.utilsType.WebSelector;
-import com.luda.webDriverTest.utilsType.constans.CreateFinalUserFromKeys;
-import com.luda.webDriverTest.utilsType.constans.ElementAttributeKeys;
-import com.luda.webDriverTest.utilsType.constans.LoginFormKeys;
-import com.luda.webDriverTest.utilsType.constans.WebComponentKeys;
+import com.luda.webDriverTest.utilsType.constans.*;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.util.Hashtable;
 
 
 public class LoginValidations {
@@ -44,69 +45,29 @@ public class LoginValidations {
     @Then("^The look and feel of the page Create User is correct$")
     public void the_look_and_feel_of_the_page_create_user_is_correct() throws Throwable {
         createUserPage = new CreateUserPagePOM(Hooks.getWebDriver());
+        createUserPage.loadPlaceholderWebElements();
+        Hashtable<String, ElementDTO> virtualWebElementsAtrList =  createUserPage.getWebElementsAtrList();
+        WebElement virtualWebElement;
+        ElementDTO virtualWebElementArt;
+        By virtualElementId;
+        String txtBoxTypeElement = WebElementTypesKeys.txtBox.name();
         String keyWebComponent = WebComponentKeys.createFinalUserForm.name();
-        String keyWebElement = CreateFinalUserFromKeys.InsertIdUser.name();
         String attribute = ElementAttributeKeys.placeholder.name();
+        String resultReceived;
+        String resultExpected;
+        String assertTrace;
 
-        String resultReceived = createUserPage.getIdUserPlaceholder();
-        String resultExpected = WebSelector.getElementAttribute(keyWebComponent, keyWebElement, attribute );
-        String assertTrace = " Bad Placeholder for txtbxIdUser - Received: " + resultReceived +" & Expected: " + resultExpected;
-        Assert.assertEquals(assertTrace, resultExpected, resultReceived);
-
-        resultReceived = createUserPage.getEmailPlaceholder();
-        keyWebElement = CreateFinalUserFromKeys.InsertEmail.name();
-        resultExpected = WebSelector.getElementAttribute(keyWebComponent, keyWebElement, attribute );
-        assertTrace = " Bad Placeholder for txtbxEmail - Received: " + resultReceived +" & Expected: " + resultExpected;
-        Assert.assertEquals(assertTrace, resultExpected, resultReceived);
-
-        resultReceived = createUserPage.getPasswordPlaceholder();
-        keyWebElement = CreateFinalUserFromKeys.InsertPassword.name();
-        resultExpected = WebSelector.getElementAttribute(keyWebComponent, keyWebElement, attribute );
-        assertTrace = " Bad Placeholder for txtbxPassword - Received: " + resultReceived +" & Expected: " + resultExpected;
-        Assert.assertEquals(assertTrace, resultExpected, resultReceived);
-
-        resultReceived = createUserPage.getConfirmPasswordPlaceholder();
-        keyWebElement = CreateFinalUserFromKeys.InsertConfirmPassword.name();
-        resultExpected = WebSelector.getElementAttribute(keyWebComponent, keyWebElement, attribute );
-        assertTrace = " Bad Placeholder for txtbxConfirmPassword - Received: " + resultReceived +" & Expected: " + resultExpected;
-        Assert.assertEquals(assertTrace, resultExpected, resultReceived);
-
-        resultReceived = createUserPage.getUserNamePlaceholder();
-        keyWebElement = CreateFinalUserFromKeys.InsertUserName.name();
-        resultExpected = WebSelector.getElementAttribute(keyWebComponent, keyWebElement, attribute );
-        assertTrace = " Bad Placeholder for txtbxUserName - Received: " + resultReceived +" & Expected: " + resultExpected;
-        Assert.assertEquals(assertTrace, resultExpected, resultReceived);
-
-        resultReceived = createUserPage.getUserNamePlaceholder();
-        keyWebElement = CreateFinalUserFromKeys.InsertUserName.name();
-        resultExpected = WebSelector.getElementAttribute(keyWebComponent, keyWebElement, attribute );
-        assertTrace = " Bad Placeholder for txtbxUserName - Received: " + resultReceived +" & Expected: " + resultExpected;
-        Assert.assertEquals(assertTrace, resultExpected, resultReceived);
-
-        resultReceived = createUserPage.getUserSurnamePlaceholder();
-        keyWebElement = CreateFinalUserFromKeys.InsertUserSurname.name();
-        resultExpected = WebSelector.getElementAttribute(keyWebComponent, keyWebElement, attribute );
-        assertTrace = " Bad Placeholder for txtbxUserSurname - Received: " + resultReceived +" & Expected: " + resultExpected;
-        Assert.assertEquals(assertTrace, resultExpected, resultReceived);
-
-        resultReceived = createUserPage.getUserAgePlaceholder();
-        keyWebElement = CreateFinalUserFromKeys.InsertAge.name();
-        resultExpected = WebSelector.getElementAttribute(keyWebComponent, keyWebElement, attribute );
-        assertTrace = " Bad Placeholder for txtbxUserAge - Received: " + resultReceived +" & Expected: " + resultExpected;
-        Assert.assertEquals(assertTrace, resultExpected, resultReceived);
-
-        resultReceived = createUserPage.getUserPhonePlaceholder();
-        keyWebElement = CreateFinalUserFromKeys.InsertPhone.name();
-        resultExpected = WebSelector.getElementAttribute(keyWebComponent, keyWebElement, attribute );
-        assertTrace = " Bad Placeholder for txtbxUserPhone - Received: " + resultReceived +" & Expected: " + resultExpected;
-        Assert.assertEquals(assertTrace, resultExpected, resultReceived);
-
-        resultReceived = createUserPage.getSaveButtonText();
-        keyWebElement = CreateFinalUserFromKeys.SaveButton.name();
-        attribute = ElementAttributeKeys.text.name();
-        resultExpected = WebSelector.getElementAttribute(keyWebComponent, keyWebElement, attribute );
-        assertTrace = " Bad Text for SaveButton - Received: " + resultReceived +" & Expected: " + resultExpected;
-        Assert.assertEquals(assertTrace, resultExpected, resultReceived);
+        for (String key : virtualWebElementsAtrList.keySet()) {
+            if (virtualWebElementsAtrList.get(key).getType().equalsIgnoreCase(txtBoxTypeElement)){
+                virtualWebElementArt = virtualWebElementsAtrList.get(key);
+                virtualElementId = virtualWebElementArt.getIdElement();
+                virtualWebElement = Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(virtualElementId));
+                resultReceived = virtualWebElement.getAttribute(attribute);
+                resultExpected = WebSelector.getElementAttribute(keyWebComponent, virtualWebElementArt.getElementKey(), attribute );
+                assertTrace = " Bad Placeholder for " + virtualWebElementArt.getElementKey() + " - Received: " + resultReceived +" & Expected: " + resultExpected;
+                Assert.assertEquals(assertTrace, resultExpected, resultReceived);
+            }
+        }
     }
 
     @Then("^Message displayed Login Successfully for the user (.+)$")

@@ -3,24 +3,29 @@ package com.luda.webDriverTest.pom;
 import com.luda.webDriverTest.enviroment.Hooks;
 import com.luda.webDriverTest.exception.NotFoundResourceException;
 import com.luda.webDriverTest.utilsType.WebSelector;
-import com.luda.webDriverTest.utilsType.constans.LoginFormKeys;
-import com.luda.webDriverTest.utilsType.constans.WebComponentKeys;
+import com.luda.webDriverTest.utilsType.constans.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.Hashtable;
+
 public class LoginPagePOM {
-
-
+    private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(LoginPagePOM.class);
     private String keyWebComponent =  WebComponentKeys.loginForm.name();
-    private String keyWebElement = "";
-    private By txtbxInsertNameId = null;
-    private By txtbxInsertPasswordId = null;
-    private By submitButtonId = null;
-    private By labelLogInUnsuccessfullyId = null;
-    private By labelLogInSuccessfullyId = null;
-    private By accessToCreateUserButtonId=null;
+    private String txtBoxTypeElement = WebElementTypesKeys.txtBox.name();
+    private String submitTypeElement = WebElementTypesKeys.submit.name();
+    private String labelTypeElement = WebElementTypesKeys.label.name();
+
+    private Hashtable<String, ElementDTO> webElementsAtrList = new Hashtable<String, ElementDTO>();
+
+    private String insertIdUserKey =  LoginFormKeys.InsertName.name();
+    private String insertPasswordKey = LoginFormKeys.InsertPassword.name();
+    private String submitButtonKey = LoginFormKeys.SubmitButton.name();
+    private String logInUnsuccessfullyKey = LoginFormKeys.UnsuccessfullyLabel.name();
+    private String logInSuccessfullyKey = LoginFormKeys.IdUserNameSessionLabel.name();
+    private String accessToCreateUserButtonKey = LoginFormKeys.AccessToCreateUser.name();
 
     private  WebDriver currentDriver;
 
@@ -30,61 +35,95 @@ public class LoginPagePOM {
     }
 
     private void loadByIdElements() throws NotFoundResourceException {
-        keyWebElement = LoginFormKeys.InsertName.name();
-        this.txtbxInsertNameId = WebSelector.getElementAttribute(keyWebComponent, keyWebElement);
-        keyWebElement = LoginFormKeys.InsertPassword.name();
-        this.txtbxInsertPasswordId = WebSelector.getElementAttribute(keyWebComponent, keyWebElement);
-        keyWebElement = LoginFormKeys.SubmitButton.name();
-        this.submitButtonId = WebSelector.getElementAttribute(keyWebComponent, keyWebElement);
-        keyWebElement = LoginFormKeys.UnsuccessfullyLabel.name();
-        this.labelLogInUnsuccessfullyId = WebSelector.getElementAttribute(keyWebComponent, keyWebElement);
-        keyWebElement = LoginFormKeys.IdUserNameSessionLabel.name();
-        this.labelLogInSuccessfullyId = WebSelector.getElementAttribute(keyWebComponent, keyWebElement);
-        keyWebElement = LoginFormKeys.AccessToCreateUser.name();
-        this.accessToCreateUserButtonId = WebSelector.getElementAttribute(keyWebComponent, keyWebElement);
+        Hashtable<String, ElementDTO> virtualWebElementsAtr = new Hashtable<String, ElementDTO>();
+        ElementDTO virtualWebElement;
+
+        By idElement = WebSelector.getElementAttribute(keyWebComponent, insertIdUserKey);
+        virtualWebElement = new ElementDTO(insertIdUserKey,idElement,txtBoxTypeElement);
+        virtualWebElementsAtr.put(insertIdUserKey,virtualWebElement);
+
+        idElement = WebSelector.getElementAttribute(keyWebComponent, insertPasswordKey);
+        virtualWebElement = new ElementDTO(insertPasswordKey,idElement,txtBoxTypeElement);
+        virtualWebElementsAtr.put(insertPasswordKey,virtualWebElement);
+
+        idElement = WebSelector.getElementAttribute(keyWebComponent, submitButtonKey);
+        virtualWebElement = new ElementDTO(submitButtonKey,idElement,submitTypeElement);
+        virtualWebElementsAtr.put(submitButtonKey,virtualWebElement);
+
+        idElement = WebSelector.getElementAttribute(keyWebComponent, logInUnsuccessfullyKey);
+        virtualWebElement = new ElementDTO(logInUnsuccessfullyKey,idElement,labelTypeElement);
+        virtualWebElementsAtr.put(logInUnsuccessfullyKey,virtualWebElement);
+
+        idElement = WebSelector.getElementAttribute(keyWebComponent, logInSuccessfullyKey);
+        virtualWebElement = new ElementDTO(logInSuccessfullyKey,idElement,labelTypeElement);
+        virtualWebElementsAtr.put(logInSuccessfullyKey,virtualWebElement);
+
+        idElement = WebSelector.getElementAttribute(keyWebComponent, accessToCreateUserButtonKey);
+        virtualWebElement = new ElementDTO(accessToCreateUserButtonKey,idElement,submitTypeElement);
+        virtualWebElementsAtr.put(accessToCreateUserButtonKey,virtualWebElement);
+
+        setWebElementsAtrList(virtualWebElementsAtr);
+    }
+
+    public void loadPlaceholderWebElements () throws NotFoundResourceException {
+        Hashtable<String, ElementDTO> virtualWebElementsAtrList = PageHelper.updatePlaceholderWebElements(this.getWebElementsAtrList());
+        ElementDTO virtualWebElementDTO;
+        for (String key : virtualWebElementsAtrList.keySet()) {
+            virtualWebElementDTO = virtualWebElementsAtrList.get(key);
+            this.updateWebElementAtrList(key,virtualWebElementDTO);
+        }
     }
 
     public void setUserName(String userName) throws NotFoundResourceException {
-        WebElement txtbxInsertName = Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(txtbxInsertNameId));
-        txtbxInsertName.clear();
-        txtbxInsertName.sendKeys(userName);
+        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(insertIdUserKey);
+        PageHelper.setTxtBoxText(virtualWebElementDTO,userName);
     }
 
     public void setPassword(String password) throws NotFoundResourceException {
-        WebElement txtbxInsertPassword =  Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(txtbxInsertPasswordId));
-        txtbxInsertPassword.clear();
-        txtbxInsertPassword.sendKeys(password);
+        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(insertPasswordKey);
+        PageHelper.setTxtBoxText(virtualWebElementDTO,password);
     }
 
     public void commit() throws NotFoundResourceException {
-        WebElement submitButton = Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(submitButtonId));
-        submitButton.click();
+        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(submitButtonKey);
+        PageHelper.clickOnElement(virtualWebElementDTO);
     }
 
     public Boolean logInUnsuccessfullyIsDisplayed() throws NotFoundResourceException{
-        WebElement labelLogInUnsuccessfully =Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(labelLogInUnsuccessfullyId));
-        Boolean logInUnsuccessfullyDisplayed=false;
-        logInUnsuccessfullyDisplayed = labelLogInUnsuccessfully.isDisplayed();
+        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(logInUnsuccessfullyKey);
+        Boolean logInUnsuccessfullyDisplayed;
+        logInUnsuccessfullyDisplayed = PageHelper.elementDisplayed(virtualWebElementDTO);
         return logInUnsuccessfullyDisplayed;
     }
 
     public String getLogInUnsuccessfullyMessage() throws NotFoundResourceException{
-        WebElement labelLogInUnsuccessfully =Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(labelLogInUnsuccessfullyId));
-        String logInUnsuccessfullyMessage="";
-        logInUnsuccessfullyMessage = labelLogInUnsuccessfully.getText();
+        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(logInUnsuccessfullyKey);
+        virtualWebElementDTO = PageHelper.getLabelText(virtualWebElementDTO);
+        String logInUnsuccessfullyMessage = virtualWebElementDTO.getText();
         return logInUnsuccessfullyMessage;
     }
 
     public String getLogInSuccessfullyMessage() throws NotFoundResourceException{
-        WebElement labelLogInSuccessfully = Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(labelLogInSuccessfullyId));
-        String logInSuccessfullyMessage="";
-        logInSuccessfullyMessage = labelLogInSuccessfully.getText();
+        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(logInSuccessfullyKey);
+        virtualWebElementDTO = PageHelper.getLabelText(virtualWebElementDTO);
+        String logInSuccessfullyMessage = virtualWebElementDTO.getText();
         return logInSuccessfullyMessage;
     }
 
     public void navigateToCreateUser() throws NotFoundResourceException {
-        WebElement createUserButton = Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(accessToCreateUserButtonId));
-        createUserButton.click();
+        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(accessToCreateUserButtonKey);
+        PageHelper.clickOnElement(virtualWebElementDTO);
     }
 
+    public Hashtable<String, ElementDTO> getWebElementsAtrList() {
+        return webElementsAtrList;
+    }
+
+    private void setWebElementsAtrList(Hashtable<String, ElementDTO> webElementsAtrList) {
+        this.webElementsAtrList = webElementsAtrList;
+    }
+
+    private void updateWebElementAtrList ( String webElementKey , ElementDTO webElementArt){
+        this.getWebElementsAtrList().replace(webElementKey,webElementArt);
+    }
 }

@@ -4,26 +4,33 @@ import com.luda.webDriverTest.enviroment.Hooks;
 import com.luda.webDriverTest.exception.NotFoundResourceException;
 import com.luda.webDriverTest.utilsType.WebSelector;
 import com.luda.webDriverTest.utilsType.constans.CreateFinalUserFromKeys;
-import com.luda.webDriverTest.utilsType.constans.LoginFormKeys;
+import com.luda.webDriverTest.utilsType.constans.ElementAttributeKeys;
 import com.luda.webDriverTest.utilsType.constans.WebComponentKeys;
+import com.luda.webDriverTest.utilsType.constans.WebElementTypesKeys;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class CreateUserPagePOM {
+import java.util.Hashtable;
 
+public class CreateUserPagePOM {
+    private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(CreateUserPagePOM.class);
     private String keyWebComponent =  WebComponentKeys.createFinalUserForm.name();
-    private String keyWebElement = "";
-    private By txtbxInsertIdUserId = null;
-    private By txtbxInsertEmailId = null;
-    private By txtbxInsertPasswordId = null;
-    private By txtbxInsertConfirmPasswordId = null;
-    private By txtbxInsertUserNameId = null;
-    private By txtbxInsertUserSurnameId = null;
-    private By txtbxInsertAgeId = null;
-    private By txtbxInsertPhoneId = null;
-    private By SaveButtonId=null;
+    private String txtBoxTypeElement = WebElementTypesKeys.txtBox.name();
+    private String submitTypeElement = WebElementTypesKeys.submit.name();
+
+    private Hashtable<String, ElementDTO> webElementsAtrList = new Hashtable<String, ElementDTO>();
+
+    private String insertIdUserKey = CreateFinalUserFromKeys.InsertIdUser.name();
+    private String insertEmailKey = CreateFinalUserFromKeys.InsertEmail.name();
+    private String insertPasswordKey = CreateFinalUserFromKeys.InsertPassword.name();
+    private String confirmPasswordKey = CreateFinalUserFromKeys.InsertConfirmPassword.name();
+    private String insertUserNameKey = CreateFinalUserFromKeys.InsertUserName.name();
+    private String insertUserSurnameKey = CreateFinalUserFromKeys.InsertUserSurname.name();
+    private String insertAgeKey = CreateFinalUserFromKeys.InsertAge.name();
+    private String insertPhoneKey = CreateFinalUserFromKeys.InsertPhone.name();
+    private String saveButtonKey = CreateFinalUserFromKeys.SaveButton.name();
 
     private  WebDriver currentDriver;
 
@@ -33,147 +40,119 @@ public class CreateUserPagePOM {
     }
 
     private void loadByIdElements() throws NotFoundResourceException {
-        keyWebElement = CreateFinalUserFromKeys.InsertIdUser.name();
-        this.txtbxInsertIdUserId = WebSelector.getElementAttribute(keyWebComponent, keyWebElement);
-        keyWebElement = CreateFinalUserFromKeys.InsertEmail.name();
-        this.txtbxInsertEmailId = WebSelector.getElementAttribute(keyWebComponent, keyWebElement);
-        keyWebElement = CreateFinalUserFromKeys.InsertPassword.name();
-        this.txtbxInsertPasswordId = WebSelector.getElementAttribute(keyWebComponent, keyWebElement);
-        keyWebElement = CreateFinalUserFromKeys.InsertConfirmPassword.name();
-        this.txtbxInsertConfirmPasswordId = WebSelector.getElementAttribute(keyWebComponent, keyWebElement);
-        keyWebElement = CreateFinalUserFromKeys.InsertUserName.name();
-        this.txtbxInsertUserNameId = WebSelector.getElementAttribute(keyWebComponent, keyWebElement);
-        keyWebElement = CreateFinalUserFromKeys.InsertUserSurname.name();
-        this.txtbxInsertUserSurnameId = WebSelector.getElementAttribute(keyWebComponent, keyWebElement);
-        keyWebElement = CreateFinalUserFromKeys.InsertAge.name();
-        this.txtbxInsertAgeId = WebSelector.getElementAttribute(keyWebComponent, keyWebElement);
-        keyWebElement = CreateFinalUserFromKeys.InsertPhone.name();
-        this.txtbxInsertPhoneId = WebSelector.getElementAttribute(keyWebComponent, keyWebElement);
-        keyWebElement = CreateFinalUserFromKeys.SaveButton.name();
-        this.SaveButtonId = WebSelector.getElementAttribute(keyWebComponent, keyWebElement);
+        Hashtable<String, ElementDTO> virtualWebElementsAtr = new Hashtable<String, ElementDTO>();
+        ElementDTO virtualWebElement;
+
+        By idElement = WebSelector.getElementAttribute(keyWebComponent, insertIdUserKey);
+        virtualWebElement = new ElementDTO(insertIdUserKey,idElement,txtBoxTypeElement);
+        virtualWebElementsAtr.put(insertIdUserKey,virtualWebElement);
+
+        idElement = WebSelector.getElementAttribute(keyWebComponent, insertEmailKey);
+        virtualWebElement = new ElementDTO(insertEmailKey,idElement,txtBoxTypeElement);
+        virtualWebElementsAtr.put(insertEmailKey,virtualWebElement);
+
+        idElement = WebSelector.getElementAttribute(keyWebComponent, insertPasswordKey);
+        virtualWebElement = new ElementDTO(insertPasswordKey,idElement,txtBoxTypeElement);
+        virtualWebElementsAtr.put(insertPasswordKey,virtualWebElement);
+
+        idElement = WebSelector.getElementAttribute(keyWebComponent, confirmPasswordKey);
+        virtualWebElement = new ElementDTO(confirmPasswordKey,idElement,txtBoxTypeElement);
+        virtualWebElementsAtr.put(confirmPasswordKey,virtualWebElement);
+
+        idElement = WebSelector.getElementAttribute(keyWebComponent, insertUserNameKey);
+        virtualWebElement = new ElementDTO(insertUserNameKey,idElement,txtBoxTypeElement);
+        virtualWebElementsAtr.put(insertUserNameKey,virtualWebElement);
+
+        idElement = WebSelector.getElementAttribute(keyWebComponent, insertUserSurnameKey);
+        virtualWebElement = new ElementDTO(insertUserSurnameKey,idElement,txtBoxTypeElement);
+        virtualWebElementsAtr.put(insertUserSurnameKey,virtualWebElement);
+
+        idElement = WebSelector.getElementAttribute(keyWebComponent, insertAgeKey);
+        virtualWebElement = new ElementDTO(insertAgeKey,idElement,txtBoxTypeElement);
+        virtualWebElementsAtr.put(insertAgeKey,virtualWebElement);
+
+        idElement = WebSelector.getElementAttribute(keyWebComponent, insertPhoneKey);
+        virtualWebElement = new ElementDTO(insertPhoneKey,idElement,txtBoxTypeElement);
+        virtualWebElementsAtr.put(insertPhoneKey,virtualWebElement);
+
+        idElement = WebSelector.getElementAttribute(keyWebComponent, saveButtonKey);
+        virtualWebElement = new ElementDTO(saveButtonKey,idElement,submitTypeElement);
+        virtualWebElementsAtr.put(saveButtonKey,virtualWebElement);
+
+        setWebElementsAtrList(virtualWebElementsAtr);
+
     }
 
-    public String getIdUserPlaceholder() throws NotFoundResourceException{
-        WebElement txtbxInsertIdUser = Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(txtbxInsertIdUserId));
-        String placeholder = "";
-        placeholder = txtbxInsertIdUser.getAttribute("placeholder");
-        return placeholder;
+    public void loadPlaceholderWebElements () throws NotFoundResourceException {
+        Hashtable<String, ElementDTO> virtualWebElementsAtrList = PageHelper.updatePlaceholderWebElements(this.getWebElementsAtrList());
+        ElementDTO virtualWebElementDTO;
+        for (String key : virtualWebElementsAtrList.keySet()) {
+            virtualWebElementDTO = virtualWebElementsAtrList.get(key);
+            this.updateWebElementAtrList(key,virtualWebElementDTO);
+        }
     }
 
     public void setIdUser(String userName) throws NotFoundResourceException {
-        WebElement txtbxInsertIdUser = Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(txtbxInsertIdUserId));
-        txtbxInsertIdUser.clear();
-        txtbxInsertIdUser.sendKeys(userName);
-    }
-
-    public String getEmailPlaceholder () throws NotFoundResourceException {
-        WebElement txtbxInsertEmail =  Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(txtbxInsertEmailId));
-        String placeholder = "";
-        placeholder = txtbxInsertEmail.getAttribute("placeholder");
-        return placeholder;
+        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(insertIdUserKey);
+        PageHelper.setTxtBoxText(virtualWebElementDTO,userName);
     }
 
     public void setEmail (String email) throws NotFoundResourceException {
-        WebElement txtbxInsertEmail =  Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(txtbxInsertEmailId));
-        txtbxInsertEmail.clear();
-        txtbxInsertEmail.sendKeys(email);
-    }
-
-    public String getPasswordPlaceholder () throws NotFoundResourceException {
-        WebElement txtbxInsertPassword =  Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(txtbxInsertPasswordId));
-        String placeholder = "";
-        placeholder = txtbxInsertPassword.getAttribute("placeholder");
-        return placeholder;
+        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(insertEmailKey);
+        PageHelper.setTxtBoxText(virtualWebElementDTO,email);
     }
 
     public void setPassword(String password) throws NotFoundResourceException {
-        WebElement txtbxInsertPassword =  Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(txtbxInsertPasswordId));
-        txtbxInsertPassword.clear();
-        txtbxInsertPassword.sendKeys(password);
-    }
-
-    public String getConfirmPasswordPlaceholder () throws NotFoundResourceException {
-        WebElement txtbxInsertConfirmPassword =  Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(txtbxInsertConfirmPasswordId));
-        String placeholder = "";
-        placeholder = txtbxInsertConfirmPassword.getAttribute("placeholder");
-        return placeholder;
+        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(insertPasswordKey);
+        PageHelper.setTxtBoxText(virtualWebElementDTO,password);
     }
 
     public void setConfirmPassword(String confirmPassword) throws NotFoundResourceException {
-        WebElement txtbxInsertConfirmPassword =  Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(txtbxInsertConfirmPasswordId));
-        txtbxInsertConfirmPassword.clear();
-        txtbxInsertConfirmPassword.sendKeys(confirmPassword);
-    }
-
-    public String getUserNamePlaceholder () throws NotFoundResourceException {
-        WebElement txtbxInsertUserName =  Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(txtbxInsertUserNameId));
-        String placeholder = "";
-        placeholder = txtbxInsertUserName.getAttribute("placeholder");
-        return placeholder;
+        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(confirmPasswordKey);
+        PageHelper.setTxtBoxText(virtualWebElementDTO,confirmPassword);
     }
 
     public void setName(String userName) throws NotFoundResourceException {
-        WebElement txtbxInsertUserName =  Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(txtbxInsertUserNameId));
-        txtbxInsertUserName.clear();
-        txtbxInsertUserName.sendKeys(userName);
-    }
-
-    public String getUserSurnamePlaceholder () throws NotFoundResourceException {
-        WebElement txtbxInsertUserSurname =  Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(txtbxInsertUserSurnameId));
-        String placeholder = "";
-        placeholder = txtbxInsertUserSurname.getAttribute("placeholder");
-        return placeholder;
+        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(insertUserNameKey);
+        PageHelper.setTxtBoxText(virtualWebElementDTO,userName);
     }
 
     public void setSurname(String userSurname) throws NotFoundResourceException {
-        WebElement txtbxInsertUserSurname =  Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(txtbxInsertUserSurnameId));
-        txtbxInsertUserSurname.clear();
-        txtbxInsertUserSurname.sendKeys(userSurname);
-    }
-
-    public String getUserAgePlaceholder () throws NotFoundResourceException {
-        WebElement txtbxInsertAge =  Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(txtbxInsertAgeId));
-        String placeholder = "";
-        placeholder = txtbxInsertAge.getAttribute("placeholder");
-        return placeholder;
+        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(insertUserSurnameKey);
+        PageHelper.setTxtBoxText(virtualWebElementDTO,userSurname);
     }
 
     public void setAge(String userAge) throws NotFoundResourceException {
-        WebElement txtbxInsertAge =  Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(txtbxInsertAgeId));
-        txtbxInsertAge.clear();
-        txtbxInsertAge.sendKeys(userAge);
-    }
-
-    public String getUserPhonePlaceholder () throws NotFoundResourceException {
-        WebElement txtbxInsertPhone =  Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(txtbxInsertPhoneId));
-        String placeholder = "";
-        placeholder = txtbxInsertPhone.getAttribute("placeholder");
-        return placeholder;
+        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(insertAgeKey);
+        PageHelper.setTxtBoxText(virtualWebElementDTO,userAge);
     }
 
     public void setPhone(String userPhone) throws NotFoundResourceException {
-        WebElement txtbxInsertPhone =  Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(txtbxInsertPhoneId));
-        txtbxInsertPhone.clear();
-        txtbxInsertPhone.sendKeys(userPhone);
-    }
-
-    public String getSaveButtonText () throws NotFoundResourceException {
-        WebElement saveButtonText =  Hooks.getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(SaveButtonId));
-        String text = "";
-        text = saveButtonText.getText();
-        return text;
+        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(insertPhoneKey);
+        PageHelper.setTxtBoxText(virtualWebElementDTO,userPhone);
     }
 
     public void save() throws NotFoundResourceException {
-        WebElement saveButton = Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(SaveButtonId));
-        saveButton.click();
+        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(saveButtonKey);
+        PageHelper.clickOnElement(virtualWebElementDTO);
     }
 
     public boolean saveButtonIsDisplayed() throws NotFoundResourceException {
-        WebElement saveButton = Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(SaveButtonId));
-        Boolean saveButtonDisplayed;
-        saveButtonDisplayed = saveButton.isDisplayed();
+        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(saveButtonKey);
+        PageHelper.elementDisplayed(virtualWebElementDTO);
+        boolean saveButtonDisplayed = PageHelper.elementDisplayed(virtualWebElementDTO);
         return saveButtonDisplayed;
     }
 
+    public Hashtable<String, ElementDTO> getWebElementsAtrList() {
+        return webElementsAtrList;
+    }
+
+    private void setWebElementsAtrList(Hashtable<String, ElementDTO> webElementsAtrList) {
+        this.webElementsAtrList = webElementsAtrList;
+    }
+
+    private void updateWebElementAtrList ( String webElementKey , ElementDTO webElementArt){
+        this.getWebElementsAtrList().replace(webElementKey,webElementArt);
+    }
 }

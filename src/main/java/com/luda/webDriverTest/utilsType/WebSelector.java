@@ -1,6 +1,7 @@
 package com.luda.webDriverTest.utilsType;
 
 import com.luda.webDriverTest.exception.NotFoundResourceException;
+import com.luda.webDriverTest.pom.ElementDTO;
 import com.luda.webDriverTest.utilsType.constans.ElementAttributeKeys;
 import com.luda.webDriverTest.utilsType.constans.WebComponentKeys;
 import org.openqa.selenium.By;
@@ -9,12 +10,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Hashtable;
 import java.util.Properties;
 
 public class WebSelector {
     private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(WebSelector.class);
 
     private static String PropertiesDir = new File( "." ).getAbsolutePath();
+    private Hashtable<String, Properties> propertiesList = new Hashtable<String, Properties>();
     private static Properties loginForm = null;
     private static Properties createFinalUserForm = null;
     private static Properties bookingPanel = null;
@@ -24,7 +27,7 @@ public class WebSelector {
      * Always return the same instance (singleton)
      * @return
      */
-    private static Properties getWebElemntsProps( String keyWebComponent ) throws NotFoundResourceException {
+    private static Properties getWebElementsProps(String keyWebComponent ) throws NotFoundResourceException {
 
         if (keyWebComponent.equalsIgnoreCase(WebComponentKeys.loginForm.name()) ) {
             if (loginForm == null){
@@ -89,14 +92,14 @@ public class WebSelector {
 
     public static String getElementAttribute (String keyWebComponent, String key, String attribute) throws NotFoundResourceException {
         String textValue="";
-
-        if (!attribute.equalsIgnoreCase("class")){
+        if (attribute.equalsIgnoreCase(ElementAttributeKeys.classAtr.name())){
             //TODO Optimize for multi language with a relaccionation to environment configuration extracting the set language
-            key = key + "." + attribute + ".es";
-            textValue = WebSelector.getWebElemntsProps(keyWebComponent).getProperty(key);
-        }else {
+            attribute = "class";
             key = key + "." + attribute;
-            textValue = WebSelector.getWebElemntsProps(keyWebComponent).getProperty(key);
+            textValue = WebSelector.getWebElementsProps(keyWebComponent).getProperty(key);
+        }else {
+            key = key + "." + attribute + ".es";
+            textValue = WebSelector.getWebElementsProps(keyWebComponent).getProperty(key);
         }
 
         return textValue;
@@ -107,7 +110,7 @@ public class WebSelector {
         String[] subValues = null;
         key = key + "." + ElementAttributeKeys.id.name();
 
-        String value = WebSelector.getWebElemntsProps(keyWebComponent).getProperty(key);
+        String value = WebSelector.getWebElementsProps(keyWebComponent).getProperty(key);
         LOGGER.debug("The " + key + " property has the value: " + value);
         if(value.startsWith(ElementAttributeKeys.byId.name())){
             subValues = value.split(ElementAttributeKeys.byId.name()+ ".");

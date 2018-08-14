@@ -6,6 +6,7 @@ public enum ElementAttributeKeys {
     byName,
     byClass,
     id,
+    classAtr,
     text,
     placeholder
     }

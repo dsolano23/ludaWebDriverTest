@@ -23,7 +23,7 @@ public class BookingValidations {
     public void the_booking_panel_will_be_shown_to_me() throws Throwable {
         String keyWebComponent = WebComponentKeys.bookingPanel.name();
         String keyWebElement = BookingPanelKeys.bookingPanel.name();
-        String classAttribute ="class";
+        String classAttribute = ElementAttributeKeys.classAtr.name();
 
         WebElement bookingPanel  =  Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable((WebSelector.getElementAttribute(keyWebComponent, keyWebElement))));
         LOGGER.debug("value of slide-in " + bookingPanel.getAttribute(classAttribute));

@@ -86,17 +86,17 @@ insertAddress.sendKeys(Keys.DOWN);
         LOGGER.debug("I insert a user location address:" + userLocationAddress);
 
         getWebDriver().findElement(By.xpath("//label[contains(text(),Maudes")).click();
-        WebElement googleResult  =  Hooks.getWebDriverWait().until((ExpectedConditions.presenceOfElementLocated(By.id("resultStats"))));
-        WebElement googleResult  =  Hooks.getWebDriverWait().until((ExpectedConditions.presenceOfElementLocated(By.id("keyword_suggest"))));
-        List<WebElement> findElements = getWebDriver().findElements(By.xpath("//*[@id='rso']//h3/a"));
-        List<WebElement> findElements = Hooks.getWebDriverWait().until(ExpectedConditions.numberOfElementsToBeMoreThan(By.className("suggest-left-cell"), 0));
+        ElementDTO googleResult  =  Hooks.getWebDriverWait().until((ExpectedConditions.presenceOfElementLocated(By.id("resultStats"))));
+        ElementDTO googleResult  =  Hooks.getWebDriverWait().until((ExpectedConditions.presenceOfElementLocated(By.id("keyword_suggest"))));
+        List<ElementDTO> findElements = getWebDriver().findElements(By.xpath("//*[@id='rso']//h3/a"));
+        List<ElementDTO> findElements = Hooks.getWebDriverWait().until(ExpectedConditions.numberOfElementsToBeMoreThan(By.className("suggest-left-cell"), 0));
         insertAddress  =  Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(By.className("form-control ng-pristine ng-untouched ng-valid ng-isolate-scope")));
         LOGGER.debug("I insert a user location address:" + insertAddress);
-        List<WebElement> findElements = Hooks.getWebDriverWait().until(ExpectedConditions.numberOfElementsToBeMoreThan(By.className("form-control ng-pristine ng-untouched ng-valid ng-isolate-scope"),0));
+        List<ElementDTO> findElements = Hooks.getWebDriverWait().until(ExpectedConditions.numberOfElementsToBeMoreThan(By.className("form-control ng-pristine ng-untouched ng-valid ng-isolate-scope"),0));
 
 
         this are all the links you like to visit
-        for (WebElement webElement : findElements)
+        for (ElementDTO webElement : findElements)
         {
             LOGGER.debug("Valor 0 text dentro del for:" + webElement.toString());
             LOGGER.debug("Valor 1 text dentro del for:" + webElement.getText());
