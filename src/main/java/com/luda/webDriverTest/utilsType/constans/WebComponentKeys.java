@@ -4,4 +4,6 @@ public enum WebComponentKeys {
     loginForm,
     createFinalUserForm,
     bookingPanel,
+    cartPanel,
+    endBookingPanel
 }

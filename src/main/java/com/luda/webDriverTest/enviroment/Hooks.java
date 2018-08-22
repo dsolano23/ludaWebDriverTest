@@ -7,18 +7,13 @@ package com.luda.webDriverTest.enviroment;
 import com.luda.webDriverTest.exception.NotFoundResourceException;
 import com.luda.webDriverTest.utilsType.CheckMethods;
 import cucumber.api.Scenario;
-import cucumber.api.java.Before;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
-
-import java.net.MalformedURLException;
-import java.util.concurrent.TimeUnit;
 
 
 public class Hooks {

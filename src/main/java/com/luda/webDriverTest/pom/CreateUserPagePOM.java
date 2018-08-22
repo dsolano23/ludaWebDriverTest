@@ -1,26 +1,22 @@
 package com.luda.webDriverTest.pom;
 
-import com.luda.webDriverTest.enviroment.Hooks;
 import com.luda.webDriverTest.exception.NotFoundResourceException;
 import com.luda.webDriverTest.utilsType.WebSelector;
 import com.luda.webDriverTest.utilsType.constans.CreateFinalUserFromKeys;
-import com.luda.webDriverTest.utilsType.constans.ElementAttributeKeys;
 import com.luda.webDriverTest.utilsType.constans.WebComponentKeys;
 import com.luda.webDriverTest.utilsType.constans.WebElementTypesKeys;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.Hashtable;
 
-public class CreateUserPagePOM {
+public class CreateUserPagePOM  {
     private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(CreateUserPagePOM.class);
     private String keyWebComponent =  WebComponentKeys.createFinalUserForm.name();
     private String txtBoxTypeElement = WebElementTypesKeys.txtBox.name();
     private String submitTypeElement = WebElementTypesKeys.submit.name();
 
-    private Hashtable<String, ElementDTO> webElementsAtrList = new Hashtable<String, ElementDTO>();
+    private Hashtable<String, ElementDTO> webElementsList = new Hashtable<String, ElementDTO>();
 
     private String insertIdUserKey = CreateFinalUserFromKeys.InsertIdUser.name();
     private String insertEmailKey = CreateFinalUserFromKeys.InsertEmail.name();
@@ -79,12 +75,12 @@ public class CreateUserPagePOM {
         virtualWebElement = new ElementDTO(saveButtonKey,idElement,submitTypeElement);
         virtualWebElementsAtr.put(saveButtonKey,virtualWebElement);
 
-        setWebElementsAtrList(virtualWebElementsAtr);
+        setWebElementsList(virtualWebElementsAtr);
 
     }
 
     public void loadPlaceholderWebElements () throws NotFoundResourceException {
-        Hashtable<String, ElementDTO> virtualWebElementsAtrList = PageHelper.updatePlaceholderWebElements(this.getWebElementsAtrList());
+        Hashtable<String, ElementDTO> virtualWebElementsAtrList = PageHelper.updatePlaceholderWebElements(this.getWebElementsList());
         ElementDTO virtualWebElementDTO;
         for (String key : virtualWebElementsAtrList.keySet()) {
             virtualWebElementDTO = virtualWebElementsAtrList.get(key);
@@ -93,66 +89,66 @@ public class CreateUserPagePOM {
     }
 
     public void setIdUser(String userName) throws NotFoundResourceException {
-        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(insertIdUserKey);
+        ElementDTO virtualWebElementDTO = this.getWebElementsList().get(insertIdUserKey);
         PageHelper.setTxtBoxText(virtualWebElementDTO,userName);
     }
 
     public void setEmail (String email) throws NotFoundResourceException {
-        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(insertEmailKey);
+        ElementDTO virtualWebElementDTO = this.getWebElementsList().get(insertEmailKey);
         PageHelper.setTxtBoxText(virtualWebElementDTO,email);
     }
 
     public void setPassword(String password) throws NotFoundResourceException {
-        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(insertPasswordKey);
+        ElementDTO virtualWebElementDTO = this.getWebElementsList().get(insertPasswordKey);
         PageHelper.setTxtBoxText(virtualWebElementDTO,password);
     }
 
     public void setConfirmPassword(String confirmPassword) throws NotFoundResourceException {
-        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(confirmPasswordKey);
+        ElementDTO virtualWebElementDTO = this.getWebElementsList().get(confirmPasswordKey);
         PageHelper.setTxtBoxText(virtualWebElementDTO,confirmPassword);
     }
 
     public void setName(String userName) throws NotFoundResourceException {
-        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(insertUserNameKey);
+        ElementDTO virtualWebElementDTO = this.getWebElementsList().get(insertUserNameKey);
         PageHelper.setTxtBoxText(virtualWebElementDTO,userName);
     }
 
     public void setSurname(String userSurname) throws NotFoundResourceException {
-        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(insertUserSurnameKey);
+        ElementDTO virtualWebElementDTO = this.getWebElementsList().get(insertUserSurnameKey);
         PageHelper.setTxtBoxText(virtualWebElementDTO,userSurname);
     }
 
     public void setAge(String userAge) throws NotFoundResourceException {
-        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(insertAgeKey);
+        ElementDTO virtualWebElementDTO = this.getWebElementsList().get(insertAgeKey);
         PageHelper.setTxtBoxText(virtualWebElementDTO,userAge);
     }
 
     public void setPhone(String userPhone) throws NotFoundResourceException {
-        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(insertPhoneKey);
+        ElementDTO virtualWebElementDTO = this.getWebElementsList().get(insertPhoneKey);
         PageHelper.setTxtBoxText(virtualWebElementDTO,userPhone);
     }
 
     public void save() throws NotFoundResourceException {
-        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(saveButtonKey);
+        ElementDTO virtualWebElementDTO = this.getWebElementsList().get(saveButtonKey);
         PageHelper.clickOnElement(virtualWebElementDTO);
     }
 
     public boolean saveButtonIsDisplayed() throws NotFoundResourceException {
-        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(saveButtonKey);
+        ElementDTO virtualWebElementDTO = this.getWebElementsList().get(saveButtonKey);
         PageHelper.elementDisplayed(virtualWebElementDTO);
         boolean saveButtonDisplayed = PageHelper.elementDisplayed(virtualWebElementDTO);
         return saveButtonDisplayed;
     }
 
-    public Hashtable<String, ElementDTO> getWebElementsAtrList() {
-        return webElementsAtrList;
+    public Hashtable<String, ElementDTO> getWebElementsList() {
+        return webElementsList;
     }
 
-    private void setWebElementsAtrList(Hashtable<String, ElementDTO> webElementsAtrList) {
-        this.webElementsAtrList = webElementsAtrList;
+    private void setWebElementsList(Hashtable<String, ElementDTO> webElementsList) {
+        this.webElementsList = webElementsList;
     }
 
     private void updateWebElementAtrList ( String webElementKey , ElementDTO webElementArt){
-        this.getWebElementsAtrList().replace(webElementKey,webElementArt);
+        this.getWebElementsList().replace(webElementKey,webElementArt);
     }
 }

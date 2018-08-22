@@ -17,11 +17,8 @@ public class WebSelector {
     private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(WebSelector.class);
 
     private static String PropertiesDir = new File( "." ).getAbsolutePath();
-    private Hashtable<String, Properties> propertiesList = new Hashtable<String, Properties>();
-    private static Properties loginForm = null;
-    private static Properties createFinalUserForm = null;
-    private static Properties bookingPanel = null;
-    private static Properties currentProp = new Properties();
+    private static Hashtable<String, Properties> propertiesList = new Hashtable<String, Properties>();
+
 
     /**
      * Always return the same instance (singleton)
@@ -30,31 +27,43 @@ public class WebSelector {
     private static Properties getWebElementsProps(String keyWebComponent ) throws NotFoundResourceException {
 
         if (keyWebComponent.equalsIgnoreCase(WebComponentKeys.loginForm.name()) ) {
-            if (loginForm == null){
-                loginForm = new Properties();
+            if (getPropertiesList().get(keyWebComponent) == null){
+                Properties loginForm;
                 String fileName = WebComponentKeys.loginForm.name();
-                currentProp.putAll(loadWebElementProperties(fileName));
-            }else {
-                currentProp.putAll(loginForm);
+                loginForm = loadWebElementProperties(fileName);
+                getPropertiesList().put(keyWebComponent,loginForm);
             }
         }else if (keyWebComponent.equalsIgnoreCase(WebComponentKeys.createFinalUserForm.name()) ) {
-            if (createFinalUserForm == null ){
-                createFinalUserForm = new Properties();
+            if (getPropertiesList().get(keyWebComponent) == null ){
+                Properties createFinalUserForm;
                 String fileName = WebComponentKeys.createFinalUserForm.name();
-                currentProp.putAll(loadWebElementProperties(fileName));
-            }else {
-                currentProp.putAll(createFinalUserForm);
+                createFinalUserForm = loadWebElementProperties(fileName);
+                getPropertiesList().put(keyWebComponent,createFinalUserForm);
             }
         }else if (keyWebComponent.equalsIgnoreCase(WebComponentKeys.bookingPanel.name()) ) {
-            if (bookingPanel == null){
-                bookingPanel = new Properties();
+            if (getPropertiesList().get(keyWebComponent) == null){
+                Properties bookingPanel;
                 String fileName = WebComponentKeys.bookingPanel.name();
-                currentProp.putAll(loadWebElementProperties(fileName));
-            }else {
-                currentProp.putAll(bookingPanel);
+                bookingPanel = loadWebElementProperties(fileName);
+                getPropertiesList().put(keyWebComponent,bookingPanel);
+            }
+        }else if (keyWebComponent.equalsIgnoreCase(WebComponentKeys.cartPanel.name()) ) {
+            if (getPropertiesList().get(keyWebComponent) == null){
+                Properties cartPanel;
+                String fileName = WebComponentKeys.cartPanel.name();
+                cartPanel = loadWebElementProperties(fileName);
+                getPropertiesList().put(keyWebComponent,cartPanel);
+            }
+        }else if (keyWebComponent.equalsIgnoreCase(WebComponentKeys.endBookingPanel.name()) ) {
+            if (getPropertiesList().get(keyWebComponent) == null){
+                Properties cartPanel;
+                String fileName = WebComponentKeys.endBookingPanel.name();
+                cartPanel = loadWebElementProperties(fileName);
+                getPropertiesList().put(keyWebComponent,cartPanel);
             }
         }
-        return currentProp;
+
+        return getPropertiesList().get(keyWebComponent);
     }
 
     private static Properties loadWebElementProperties(String keyWebComponent) throws NotFoundResourceException {
@@ -92,14 +101,23 @@ public class WebSelector {
 
     public static String getElementAttribute (String keyWebComponent, String key, String attribute) throws NotFoundResourceException {
         String textValue="";
+        LOGGER.debug("The keyWebComponent is: " + keyWebComponent + " the key is " + key + " and the attribute is: " + attribute);
         if (attribute.equalsIgnoreCase(ElementAttributeKeys.classAtr.name())){
             //TODO Optimize for multi language with a relaccionation to environment configuration extracting the set language
             attribute = "class";
             key = key + "." + attribute;
+            LOGGER.debug("Locate class attribute the final Key is: " + key);
             textValue = WebSelector.getWebElementsProps(keyWebComponent).getProperty(key);
-        }else {
+            LOGGER.debug("The value of " + key + " is: " + textValue);
+        }else if (attribute.equalsIgnoreCase(ElementAttributeKeys.placeholder.name())|| attribute.equalsIgnoreCase(ElementAttributeKeys.text.name())){
             key = key + "." + attribute + ".es";
             textValue = WebSelector.getWebElementsProps(keyWebComponent).getProperty(key);
+            LOGGER.debug("The value of " + key + " is: " + textValue);
+        }else {
+            key = key + "." + attribute;
+            LOGGER.debug("Locate a simple attribute the final Key is: " + key);
+            textValue = WebSelector.getWebElementsProps(keyWebComponent).getProperty(key);
+            LOGGER.debug("The value of " + key + " is: " + textValue);
         }
 
         return textValue;
@@ -107,7 +125,7 @@ public class WebSelector {
 
     public static By getElementAttribute(String keyWebComponent, String key) throws NotFoundResourceException {
         By target = null;
-        String[] subValues = null;
+        String[] subValues;
         key = key + "." + ElementAttributeKeys.id.name();
 
         String value = WebSelector.getWebElementsProps(keyWebComponent).getProperty(key);
@@ -130,9 +148,18 @@ public class WebSelector {
         }else if(value.startsWith(ElementAttributeKeys.byClass.name())){
             subValues = value.split(ElementAttributeKeys.byClass.name()+ ".");
             value = subValues[1];
-            target = By.cssSelector(value);
+            target = By.className(value);
             LOGGER.debug("The location mode is by css and final value is: " + value);
         }
         return target;
     }
+
+    private static Hashtable<String, Properties> getPropertiesList() {
+        return propertiesList;
+    }
+
+    private static void setPropertiesList(Hashtable<String, Properties> propertiesList) {
+        WebSelector.propertiesList = propertiesList;
+    }
+
 }

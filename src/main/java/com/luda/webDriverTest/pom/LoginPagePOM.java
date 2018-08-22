@@ -1,13 +1,10 @@
 package com.luda.webDriverTest.pom;
 
-import com.luda.webDriverTest.enviroment.Hooks;
 import com.luda.webDriverTest.exception.NotFoundResourceException;
 import com.luda.webDriverTest.utilsType.WebSelector;
 import com.luda.webDriverTest.utilsType.constans.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.Hashtable;
 
@@ -18,7 +15,7 @@ public class LoginPagePOM {
     private String submitTypeElement = WebElementTypesKeys.submit.name();
     private String labelTypeElement = WebElementTypesKeys.label.name();
 
-    private Hashtable<String, ElementDTO> webElementsAtrList = new Hashtable<String, ElementDTO>();
+    private Hashtable<String, ElementDTO> webElementsList = new Hashtable<String, ElementDTO>();
 
     private String insertIdUserKey =  LoginFormKeys.InsertName.name();
     private String insertPasswordKey = LoginFormKeys.InsertPassword.name();
@@ -62,11 +59,11 @@ public class LoginPagePOM {
         virtualWebElement = new ElementDTO(accessToCreateUserButtonKey,idElement,submitTypeElement);
         virtualWebElementsAtr.put(accessToCreateUserButtonKey,virtualWebElement);
 
-        setWebElementsAtrList(virtualWebElementsAtr);
+        setWebElementsList(virtualWebElementsAtr);
     }
 
     public void loadPlaceholderWebElements () throws NotFoundResourceException {
-        Hashtable<String, ElementDTO> virtualWebElementsAtrList = PageHelper.updatePlaceholderWebElements(this.getWebElementsAtrList());
+        Hashtable<String, ElementDTO> virtualWebElementsAtrList = PageHelper.updatePlaceholderWebElements(this.getWebElementsList());
         ElementDTO virtualWebElementDTO;
         for (String key : virtualWebElementsAtrList.keySet()) {
             virtualWebElementDTO = virtualWebElementsAtrList.get(key);
@@ -75,55 +72,55 @@ public class LoginPagePOM {
     }
 
     public void setUserName(String userName) throws NotFoundResourceException {
-        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(insertIdUserKey);
+        ElementDTO virtualWebElementDTO = this.getWebElementsList().get(insertIdUserKey);
         PageHelper.setTxtBoxText(virtualWebElementDTO,userName);
     }
 
     public void setPassword(String password) throws NotFoundResourceException {
-        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(insertPasswordKey);
+        ElementDTO virtualWebElementDTO = this.getWebElementsList().get(insertPasswordKey);
         PageHelper.setTxtBoxText(virtualWebElementDTO,password);
     }
 
     public void commit() throws NotFoundResourceException {
-        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(submitButtonKey);
+        ElementDTO virtualWebElementDTO = this.getWebElementsList().get(submitButtonKey);
         PageHelper.clickOnElement(virtualWebElementDTO);
     }
 
     public Boolean logInUnsuccessfullyIsDisplayed() throws NotFoundResourceException{
-        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(logInUnsuccessfullyKey);
+        ElementDTO virtualWebElementDTO = this.getWebElementsList().get(logInUnsuccessfullyKey);
         Boolean logInUnsuccessfullyDisplayed;
         logInUnsuccessfullyDisplayed = PageHelper.elementDisplayed(virtualWebElementDTO);
         return logInUnsuccessfullyDisplayed;
     }
 
     public String getLogInUnsuccessfullyMessage() throws NotFoundResourceException{
-        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(logInUnsuccessfullyKey);
+        ElementDTO virtualWebElementDTO = this.getWebElementsList().get(logInUnsuccessfullyKey);
         virtualWebElementDTO = PageHelper.getLabelText(virtualWebElementDTO);
         String logInUnsuccessfullyMessage = virtualWebElementDTO.getText();
         return logInUnsuccessfullyMessage;
     }
 
     public String getLogInSuccessfullyMessage() throws NotFoundResourceException{
-        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(logInSuccessfullyKey);
+        ElementDTO virtualWebElementDTO = this.getWebElementsList().get(logInSuccessfullyKey);
         virtualWebElementDTO = PageHelper.getLabelText(virtualWebElementDTO);
         String logInSuccessfullyMessage = virtualWebElementDTO.getText();
         return logInSuccessfullyMessage;
     }
 
     public void navigateToCreateUser() throws NotFoundResourceException {
-        ElementDTO virtualWebElementDTO = this.getWebElementsAtrList().get(accessToCreateUserButtonKey);
+        ElementDTO virtualWebElementDTO = this.getWebElementsList().get(accessToCreateUserButtonKey);
         PageHelper.clickOnElement(virtualWebElementDTO);
     }
 
-    public Hashtable<String, ElementDTO> getWebElementsAtrList() {
-        return webElementsAtrList;
+    public Hashtable<String, ElementDTO> getWebElementsList() {
+        return webElementsList;
     }
 
-    private void setWebElementsAtrList(Hashtable<String, ElementDTO> webElementsAtrList) {
-        this.webElementsAtrList = webElementsAtrList;
+    private void setWebElementsList(Hashtable<String, ElementDTO> webElementsList) {
+        this.webElementsList = webElementsList;
     }
 
     private void updateWebElementAtrList ( String webElementKey , ElementDTO webElementArt){
-        this.getWebElementsAtrList().replace(webElementKey,webElementArt);
+        this.getWebElementsList().replace(webElementKey,webElementArt);
     }
 }

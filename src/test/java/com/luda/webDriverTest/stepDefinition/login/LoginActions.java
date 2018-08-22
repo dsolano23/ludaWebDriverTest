@@ -8,6 +8,8 @@ import com.luda.webDriverTest.utilsType.FileWriter;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 
+import java.util.concurrent.TimeUnit;
+
 
 public class LoginActions {
 
@@ -22,6 +24,7 @@ public class LoginActions {
     @Given("^User Navigate to Home Page$")
     public void user_navigate_to_Home_Page() throws Throwable {
     	LOGGER.debug("User is on Home Page - " + FileWriter.getEnvProps().getProperty(EnviromentConstantsNames.MAIN_URL));
+    	Hooks.getWebDriver().manage().deleteAllCookies();
         Hooks.getWebDriver().navigate().to(FileWriter.getEnvProps().getProperty(EnviromentConstantsNames.MAIN_URL));
         Hooks.getWebDriver().navigate().refresh();
     }
@@ -37,6 +40,7 @@ public class LoginActions {
         loginPage.setPassword(password);
         Hooks.getScenario().write("User Login values userName: " + userName + " password: " + password);
         loginPage.commit();
+        TimeUnit.SECONDS.sleep(2);
     }
 
 

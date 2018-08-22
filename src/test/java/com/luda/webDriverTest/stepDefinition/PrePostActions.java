@@ -52,8 +52,9 @@ public class PrePostActions {
      * Destroy driver browser for each test execution
      */
     public void destroyDriver() throws NotFoundResourceException {
-        Hooks.getWebDriver().close();
+
         Hooks.getWebDriver().quit();
+        //Hooks.getWebDriver().close();
         Hooks.setWebDriver(null);
         Hooks.setWebDriverWait(null);
         LOGGER.info("Finalized  Execution Test");

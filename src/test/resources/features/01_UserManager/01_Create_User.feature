@@ -10,5 +10,5 @@ Feature: Create User
     Then The create user button <available> available
 
     Examples:
-      | idUserName       | email                      | password | confirmPWD | name | surName      | age | phone     | available |
-      | qa01ludapartners | qa01ludapartners@gmail.com | Luda2017 | Luda2017   | qaUno | ludapartners | 16  | 666555111 |     is     |
+      | idUserName       | email                      | password | confirmPWD | name  | surName      | age | phone     | available |
+      | qa01ludapartners | qa01ludapartners@gmail.com | Luda2017 | Luda2017   | qaUno | ludapartners | 16  | 666555111 | is        |

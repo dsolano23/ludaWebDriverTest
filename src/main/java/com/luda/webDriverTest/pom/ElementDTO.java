@@ -41,8 +41,8 @@ public class ElementDTO {
         return classAtr;
     }
 
-    public void setClassAtr(String classAtr) {
-        this.classAtr = classAtr;
+    public void setClassAtr(String classAtrValue) {
+        this.classAtr = classAtrValue;
     }
 
     public String getText() {

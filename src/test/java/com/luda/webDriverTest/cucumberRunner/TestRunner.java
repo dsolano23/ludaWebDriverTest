@@ -30,11 +30,12 @@ import java.util.concurrent.TimeUnit;
 						},
 		
 				//Used only if you want run a specific feature by tag : @login, @search or @filter
-				tags = {"@smokeTest"},
+				tags = {"@BookingCartItemListManagement08"},
 				
 				features = {"src/test/resources/features"},
 				glue = {"com.luda.webDriverTest.stepDefinition"}
 				)
+
 
 public class TestRunner {
 	

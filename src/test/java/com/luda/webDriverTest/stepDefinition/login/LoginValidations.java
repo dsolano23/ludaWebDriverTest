@@ -46,7 +46,7 @@ public class LoginValidations {
     public void the_look_and_feel_of_the_page_create_user_is_correct() throws Throwable {
         createUserPage = new CreateUserPagePOM(Hooks.getWebDriver());
         createUserPage.loadPlaceholderWebElements();
-        Hashtable<String, ElementDTO> virtualWebElementsAtrList =  createUserPage.getWebElementsAtrList();
+        Hashtable<String, ElementDTO> virtualWebElementsAtrList =  createUserPage.getWebElementsList();
         WebElement virtualWebElement;
         ElementDTO virtualWebElementArt;
         By virtualElementId;

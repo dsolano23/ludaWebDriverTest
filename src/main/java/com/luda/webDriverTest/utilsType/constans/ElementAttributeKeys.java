@@ -8,5 +8,15 @@ public enum ElementAttributeKeys {
     id,
     classAtr,
     text,
-    placeholder
+    placeholder,
+    style,
+    xpathBase,
+    firstRow,
+    baseCurrentRow,
+    columnDescriptionCode,
+    columnDescriptionMoleculeCode,
+    columnAmountCode,
+    columnFamilyCode,
+    columnPrescriptionCode,
+    columnActionsCode
     }

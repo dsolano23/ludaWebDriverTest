@@ -5,8 +5,11 @@ public enum BookingPanelKeys {
     insertLocationUser,
     bookingPanel,
     insertItemToSearch,
+    showCart,
+    itemsCartCount,
     searchItemButton,
     itemsTable,
-    addItemToCartPopup
+    addItemToCartPopup,
+    continueButton
 
 }
