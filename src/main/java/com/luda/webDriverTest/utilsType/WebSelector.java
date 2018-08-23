@@ -1,7 +1,6 @@
 package com.luda.webDriverTest.utilsType;
 
 import com.luda.webDriverTest.exception.NotFoundResourceException;
-import com.luda.webDriverTest.pom.ElementDTO;
 import com.luda.webDriverTest.utilsType.constans.ElementAttributeKeys;
 import com.luda.webDriverTest.utilsType.constans.WebComponentKeys;
 import org.openqa.selenium.By;

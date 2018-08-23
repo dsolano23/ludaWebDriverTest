@@ -1,6 +1,17 @@
 @smokeTest
-@Booking
+@BookingManagement
 @BookingLocationUser
+
+#
+#
+#-------------------------------- TAG: @BookingManagement					--> Estimated Runtime: xx Hour xx minutes
+#-------------------------------- TAG: @BookingLocationUser 				--> Estimated Runtime: xx minutes
+#-------------------------------- TAG: @BookingItemStockListManagement 		--> Estimated Runtime: xx minutes
+#-------------------------------- TAG: @BookingItemCartListManagement 		--> Estimated Runtime: xx minutes
+#-------------------------------- TAG: @BookingPharmacyManagement 			--> Estimated Runtime: xx minutes
+#
+#
+
 Feature: Booking Location User
 
   Background: Generic Steps

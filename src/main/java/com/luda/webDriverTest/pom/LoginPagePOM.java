@@ -1,8 +1,12 @@
 package com.luda.webDriverTest.pom;
 
+import com.luda.webDriverTest.beans.ElementDTO;
 import com.luda.webDriverTest.exception.NotFoundResourceException;
+import com.luda.webDriverTest.utilsType.PageHelper;
 import com.luda.webDriverTest.utilsType.WebSelector;
-import com.luda.webDriverTest.utilsType.constans.*;
+import com.luda.webDriverTest.utilsType.constans.LoginFormKeys;
+import com.luda.webDriverTest.utilsType.constans.WebComponentKeys;
+import com.luda.webDriverTest.utilsType.constans.WebElementTypesKeys;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

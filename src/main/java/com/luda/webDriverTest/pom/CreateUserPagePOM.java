@@ -1,6 +1,8 @@
 package com.luda.webDriverTest.pom;
 
+import com.luda.webDriverTest.beans.ElementDTO;
 import com.luda.webDriverTest.exception.NotFoundResourceException;
+import com.luda.webDriverTest.utilsType.PageHelper;
 import com.luda.webDriverTest.utilsType.WebSelector;
 import com.luda.webDriverTest.utilsType.constans.CreateFinalUserFromKeys;
 import com.luda.webDriverTest.utilsType.constans.WebComponentKeys;

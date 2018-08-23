@@ -1,6 +1,17 @@
 @smokeTest
-@Booking
-@BookingStockItemListManagement
+@BookingManagement
+@BookingItemStockListManagement
+
+#
+#
+#-------------------------------- TAG: @BookingManagement					--> Estimated Runtime: xx Hour xx minutes
+#-------------------------------- TAG: @BookingLocationUser 				--> Estimated Runtime: xx minutes
+#-------------------------------- TAG: @BookingItemStockListManagement 		--> Estimated Runtime: xx minutes
+#-------------------------------- TAG: @BookingItemCartListManagement 		--> Estimated Runtime: xx minutes
+#-------------------------------- TAG: @BookingPharmacyManagement 			--> Estimated Runtime: xx minutes
+#
+#
+
 Feature: Booking Item Stock List Management
 
   Background: Generic Steps
@@ -26,7 +37,7 @@ Feature: Booking Item Stock List Management
     And The button continue with the booking is available
 
   @BookingStockItemListManagement03
-  Scenario: Successful add a item to cart
+  Scenario: Successful add an item to cart
     Given My cart have 0 items added
     When I find the item with the description ESPIDIFEN
     And I put the item ESPIDIFEN 600 MG GRANULADO PARA SOLUCION ORAL SABOR COLA-LIMON , 40 sobres to the cart
@@ -41,7 +52,7 @@ Feature: Booking Item Stock List Management
     Then My cart have 1 items added
     And The button continue with the booking is available
 
-  @BookingStockItemListManagement04
+  @BookingStockItemListManagement05
   Scenario: Successful add more item to cart
     Given My cart have 0 items added
     Given I find the item with the description ESPIDIFEN

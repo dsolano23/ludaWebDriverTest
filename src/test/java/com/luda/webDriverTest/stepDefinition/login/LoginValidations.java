@@ -1,11 +1,14 @@
 package com.luda.webDriverTest.stepDefinition.login;
 
+import com.luda.webDriverTest.beans.ElementDTO;
 import com.luda.webDriverTest.enviroment.Hooks;
 import com.luda.webDriverTest.pom.CreateUserPagePOM;
-import com.luda.webDriverTest.pom.ElementDTO;
 import com.luda.webDriverTest.pom.LoginPagePOM;
 import com.luda.webDriverTest.utilsType.WebSelector;
-import com.luda.webDriverTest.utilsType.constans.*;
+import com.luda.webDriverTest.utilsType.constans.ElementAttributeKeys;
+import com.luda.webDriverTest.utilsType.constans.LoginFormKeys;
+import com.luda.webDriverTest.utilsType.constans.WebComponentKeys;
+import com.luda.webDriverTest.utilsType.constans.WebElementTypesKeys;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.By;

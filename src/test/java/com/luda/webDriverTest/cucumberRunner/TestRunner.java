@@ -17,7 +17,6 @@ import org.junit.runner.RunWith;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 @RunWith(Cucumber.class)
 
@@ -30,7 +29,7 @@ import java.util.concurrent.TimeUnit;
 						},
 		
 				//Used only if you want run a specific feature by tag : @login, @search or @filter
-				tags = {"@BookingCartItemListManagement08"},
+				tags = {"@BookingPharmacyManagement11"},
 				
 				features = {"src/test/resources/features"},
 				glue = {"com.luda.webDriverTest.stepDefinition"}

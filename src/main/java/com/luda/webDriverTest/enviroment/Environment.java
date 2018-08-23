@@ -1,7 +1,5 @@
 package com.luda.webDriverTest.enviroment;
 
-import cucumber.api.Scenario;
-
 public class Environment {
 
 

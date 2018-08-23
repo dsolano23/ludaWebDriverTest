@@ -1,4 +1,4 @@
-package com.luda.webDriverTest.pom;
+package com.luda.webDriverTest.beans;
 
 import org.openqa.selenium.By;
 

@@ -1,9 +1,15 @@
 package com.luda.webDriverTest.pom;
 
+import com.luda.webDriverTest.beans.ElementDTO;
+import com.luda.webDriverTest.beans.StockItemsTableDTO;
 import com.luda.webDriverTest.enviroment.Hooks;
 import com.luda.webDriverTest.exception.NotFoundResourceException;
+import com.luda.webDriverTest.utilsType.PageHelper;
 import com.luda.webDriverTest.utilsType.WebSelector;
-import com.luda.webDriverTest.utilsType.constans.*;
+import com.luda.webDriverTest.utilsType.constans.BookingPanelKeys;
+import com.luda.webDriverTest.utilsType.constans.ElementAttributeKeys;
+import com.luda.webDriverTest.utilsType.constans.WebComponentKeys;
+import com.luda.webDriverTest.utilsType.constans.WebElementTypesKeys;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,8 +17,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.awt.*;
 import java.util.Hashtable;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class BookingPagePOM {
     private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(BookingPagePOM.class);
@@ -25,7 +29,7 @@ public class BookingPagePOM {
     private String tableTypeElement = WebElementTypesKeys.table.name();
 
     private Hashtable<String, ElementDTO> webElementsList = new Hashtable<String, ElementDTO>();
-    private Hashtable<String, TableDTO> tableList = new Hashtable<String, TableDTO>();
+    private Hashtable<String, StockItemsTableDTO> tableList = new Hashtable<String, StockItemsTableDTO>();
     private String insertLocationUserKey = BookingPanelKeys.insertLocationUser.name();
     private String bookingPanelKey = BookingPanelKeys.bookingPanel.name();
     private String insertItemToSearchKey = BookingPanelKeys.insertItemToSearch.name();
@@ -45,8 +49,8 @@ public class BookingPagePOM {
     private void loadByIdElements() throws NotFoundResourceException {
         Hashtable<String, ElementDTO> virtualWebElements = new Hashtable<String, ElementDTO>();
         ElementDTO virtualWebElement;
-        Hashtable<String, TableDTO> virtualTables = new Hashtable<String, TableDTO>();
-        TableDTO virtualTableDTO;
+        Hashtable<String, StockItemsTableDTO> virtualTables = new Hashtable<String, StockItemsTableDTO>();
+        StockItemsTableDTO virtualStockTableDTO;
         String classAttribute = ElementAttributeKeys.classAtr.name();
 
         virtualWebElements.put(insertLocationUserKey,createNewWebElementDTO(insertLocationUserKey,txtBoxTypeElement));
@@ -58,14 +62,8 @@ public class BookingPagePOM {
         virtualWebElements.put(itemsCartCountKey,createNewWebElementDTO(itemsCartCountKey,labelTypeElement));
         virtualWebElements.put(searchItemButtonKey,createNewWebElementDTO(searchItemButtonKey,submitTypeElement));
         virtualWebElements.put(itemsTableKey,createNewWebElementDTO(itemsTableKey,tableTypeElement));
-        virtualTableDTO = PageHelper.createNewTableDTO(keyWebComponent, itemsTableKey);
-        String columnActions = WebSelector.getElementAttribute(keyWebComponent, itemsTableKey, ElementAttributeKeys.columnActionsCode.name());
-        String columnFamily = WebSelector.getElementAttribute(keyWebComponent, itemsTableKey, ElementAttributeKeys.columnFamilyCode.name());
-        String columnPrescription = WebSelector.getElementAttribute(keyWebComponent, itemsTableKey, ElementAttributeKeys.columnPrescriptionCode.name());
-        virtualTableDTO.setColumnActions(columnActions);
-        virtualTableDTO.setColumnFamily(columnFamily);
-        virtualTableDTO.setColumnPrescription(columnPrescription);
-        virtualTables.put(itemsTableKey,virtualTableDTO);
+        virtualStockTableDTO = PageHelper.createNewStockTableDTO(keyWebComponent, itemsTableKey);
+        virtualTables.put(itemsTableKey,virtualStockTableDTO);
         virtualWebElements.put(continueButtonKey,createNewWebElementDTO(continueButtonKey,submitTypeElement));
 
         setTableList(virtualTables);
@@ -142,17 +140,16 @@ public class BookingPagePOM {
 
     public WebElement getItemsTableResult() throws NotFoundResourceException {
         ElementDTO virtualWebElementDTO = this.getWebElementsList().get(itemsTableKey);
-        By elementId = virtualWebElementDTO.getIdElement();
-        WebElement itemsResultSearch = Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(elementId));
+        WebElement itemsResultSearch = PageHelper.getItemsInTable(virtualWebElementDTO);
         return itemsResultSearch;
     }
 
     public void putItemsWhichDescriptionToCart(WebElement itemsResultSearch, String descriptionItem) throws NotFoundResourceException {
-        TableDTO virtualTableDTO = this.getTableList().get(itemsTableKey);
+        StockItemsTableDTO virtualTableDTO = this.getTableList().get(itemsTableKey);
         String xpathBase = virtualTableDTO.getXpathBase();
         String columnActions = virtualTableDTO.getColumnActions();
         WebElement actionCell = null;
-        String trRowValue = PageHelper.findItemRowNum(itemsResultSearch,descriptionItem, this.getTableList().get(itemsTableKey));
+        String trRowValue = PageHelper.findItemRowNum(itemsResultSearch,descriptionItem, virtualTableDTO);
         if (!trRowValue.equalsIgnoreCase("")){
             String xpathValue = xpathBase + trRowValue + columnActions;
             actionCell = itemsResultSearch.findElement(By.xpath(xpathValue));
@@ -201,11 +198,11 @@ public class BookingPagePOM {
         this.getWebElementsList().replace(webElementKey,webElementArt);
     }
 
-    public Hashtable<String, TableDTO> getTableList() {
+    public Hashtable<String, StockItemsTableDTO> getTableList() {
         return tableList;
     }
 
-    public void setTableList(Hashtable<String, TableDTO> tableList) {
+    public void setTableList(Hashtable<String, StockItemsTableDTO> tableList) {
         this.tableList = tableList;
     }
 }

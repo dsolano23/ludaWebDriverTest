@@ -1,8 +1,8 @@
-package com.luda.webDriverTest.pom;
+package com.luda.webDriverTest.utilsType;
 
+import com.luda.webDriverTest.beans.*;
 import com.luda.webDriverTest.enviroment.Hooks;
 import com.luda.webDriverTest.exception.NotFoundResourceException;
-import com.luda.webDriverTest.utilsType.WebSelector;
 import com.luda.webDriverTest.utilsType.constans.ElementAttributeKeys;
 import com.luda.webDriverTest.utilsType.constans.WebElementTypesKeys;
 import org.openqa.selenium.By;
@@ -23,24 +23,60 @@ public class PageHelper {
 
     private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(PageHelper.class);
 
-    public static ElementDTO createNewWebElementDTO ( String keyWebComponent, String elementKey, String elementType) throws NotFoundResourceException {
+    public static ElementDTO createNewWebElementDTO (String keyWebComponent, String elementKey, String elementType) throws NotFoundResourceException {
         ElementDTO virtualWebElement;
         By idElement = WebSelector.getElementAttribute(keyWebComponent, elementKey);
         virtualWebElement = new ElementDTO(elementKey,idElement,elementType);
         return virtualWebElement;
     }
 
-    public static TableDTO createNewTableDTO ( String keyWebComponent, String elementKey) throws NotFoundResourceException {
-        TableDTO virtualTable;
+    public static StockItemsTableDTO createNewStockTableDTO (String keyWebComponent, String elementKey) throws NotFoundResourceException {
+        StockItemsTableDTO virtualStockTable;
         String xpathBase = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.xpathBase.name());
         int firstRow = parseInt(WebSelector.getElementAttribute(keyWebComponent,elementKey,ElementAttributeKeys.firstRow.name()));
         String baseCurrentRow = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.baseCurrentRow.name());
-        String columnDescriptionMolecule = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.columnDescriptionMoleculeCode.name());
-        String columnDescription = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.columnDescriptionCode.name());
-        virtualTable = new TableDTO(elementKey, xpathBase, firstRow, baseCurrentRow, columnDescriptionMolecule, columnDescription);
-
-        return virtualTable;
+        String mainSearchColumn = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.columnDescriptionMolecule.name());
+        String columnFamily = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.columnFamily.name());
+        String columnPrescription = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.columnPrescription.name());
+        String columnActions = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.columnActions.name());
+        virtualStockTable = new StockItemsTableDTO(elementKey, xpathBase, firstRow, baseCurrentRow, mainSearchColumn, columnFamily, columnPrescription, columnActions);
+        return virtualStockTable;
     }
+
+    public static CartIemTableDTO createNewCartIemTableDTO (String keyWebComponent, String elementKey) throws NotFoundResourceException {
+        CartIemTableDTO virtualStockTable;
+        String xpathBase = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.xpathBase.name());
+        int firstRow = parseInt(WebSelector.getElementAttribute(keyWebComponent,elementKey,ElementAttributeKeys.firstRow.name()));
+        String baseCurrentRow = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.baseCurrentRow.name());
+        String mainSearchColumn = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.columnDescriptionMolecule.name());
+        String secondarySearchColumn = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.columnDescriptionItem.name());
+        String columnActions = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.columnActions.name());
+        virtualStockTable = new CartIemTableDTO(elementKey, xpathBase, firstRow, baseCurrentRow, mainSearchColumn, secondarySearchColumn, columnActions);
+        return virtualStockTable;
+    }
+
+    public static EndBookingItemTableDTO createNewEndBookingItemTableDTO (String keyWebComponent, String elementKey) throws NotFoundResourceException {
+        EndBookingItemTableDTO virtualStockTable;
+        String xpathBase = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.xpathBase.name());
+        int firstRow = parseInt(WebSelector.getElementAttribute(keyWebComponent,elementKey,ElementAttributeKeys.firstRow.name()));
+        String baseCurrentRow = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.baseCurrentRow.name());
+        String mainSearchColumn = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.columnDescriptionMolecule.name());
+        String columnAmount = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.columnAmount.name());
+        virtualStockTable = new EndBookingItemTableDTO(elementKey, xpathBase, firstRow, baseCurrentRow, mainSearchColumn, columnAmount);
+        return virtualStockTable;
+    }
+
+    public static EndBookingPharmacyTableDTO createNewEndBookingPharmacyTableDTO (String keyWebComponent, String elementKey) throws NotFoundResourceException {
+        EndBookingPharmacyTableDTO virtualStockTable;
+        String xpathBase = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.xpathBase.name());
+        int firstRow = parseInt(WebSelector.getElementAttribute(keyWebComponent,elementKey,ElementAttributeKeys.firstRow.name()));
+        String baseCurrentRow = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.baseCurrentRow.name());
+        String mainSearchColumn = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.columnPharmacyName.name());
+        String columnPharmacyAddress = WebSelector.getElementAttribute(keyWebComponent, elementKey, ElementAttributeKeys.columnPharmacyAddress.name());
+        virtualStockTable = new EndBookingPharmacyTableDTO(elementKey, xpathBase, firstRow, baseCurrentRow, mainSearchColumn, columnPharmacyAddress);
+        return virtualStockTable;
+    }
+
 
     public static Hashtable<String, ElementDTO> updatePlaceholderWebElements (Hashtable<String, ElementDTO> virtualWebElementsAtrList) throws NotFoundResourceException {
         String txtBoxTypeElement = WebElementTypesKeys.txtBox.name();
@@ -60,38 +96,49 @@ public class PageHelper {
         return virtualWebElementsAtrList;
     }
 
-    public static String findItemRowNum(WebElement itemsResultSearch, String descriptionItem, TableDTO tableDTO ) throws NotFoundResourceException {
-        List<WebElement> rows  = itemsResultSearch.findElements(By.tagName("tr"));
-
+    public static String findItemRowNum(WebElement itemsResultSearch, String descriptionItem, BaseTableDTO tableDTO ) throws NotFoundResourceException {
+        //List<WebElement> rows  = itemsResultSearch.findElements(By.tagName("tr"));
         String xpathBase = tableDTO.getXpathBase();
+        List<WebElement> rows  = itemsResultSearch.findElement(By.xpath(xpathBase)).findElements(By.tagName("tr"));
         int firstRow = tableDTO.getFirstRow();
         String baseCurrentRow = tableDTO.getBaseCurrentRow();
-        String columnDescriptionMolecule = tableDTO.getColumnDescriptionMolecule();
-        String columnDescription = tableDTO.getColumnDescription();
-
+        String mainSearchColumn = tableDTO.getMainSearchColumn();
+        String secondarySearchColumn = tableDTO.getSecondarySearchColumn();
         String trRowValue="";
-        WebElement virtualCellDescriptionMolecule;
-        WebElement virtualCellDescription;
-
-        for(int rowNum=firstRow;rowNum<=rows.size();rowNum++)
-        {
+        WebElement virtualMainSearchColumn;
+        String searchedMainCellValue = "";
+        WebElement virtualSecondarySearchColumn;
+        String searchedSecondaryCellValue = "";
+        LOGGER.debug("Value of rows.size():" + rows.size() );
+        LOGGER.debug("Value of firstRow: " + firstRow );
+        LOGGER.debug("Value of search item: " + descriptionItem);
+        LOGGER.debug("Value of mainSearchColumn: " + mainSearchColumn);
+        LOGGER.debug("Value of secondarySearchColumn: " + secondarySearchColumn);
+        for(int rowNum=firstRow;rowNum<=rows.size();rowNum++){
             String currentRow = baseCurrentRow + rowNum + "]";
-            String xpathValue = xpathBase + currentRow + columnDescriptionMolecule;
+            String xpathValue = xpathBase + currentRow + mainSearchColumn;
             LOGGER.debug( "xpath " + xpathValue );
-            virtualCellDescriptionMolecule = itemsResultSearch.findElement(By.xpath(xpathValue));
-            LOGGER.debug("New Item found virtualCellDescriptionMolecule:  " + virtualCellDescriptionMolecule.getText());
-            xpathValue = xpathBase + currentRow + columnDescription;
-            LOGGER.debug( "xpath " + xpathValue );
-            virtualCellDescription = itemsResultSearch.findElement(By.xpath(xpathValue));
-            LOGGER.debug("New Item found virtualCellDescription:  " + virtualCellDescription.getText());
+            virtualMainSearchColumn = itemsResultSearch.findElement(By.xpath(xpathValue));
+            LOGGER.debug("New Item found mainSearchColumn:  " + virtualMainSearchColumn.getText());
+            searchedMainCellValue =  virtualMainSearchColumn.getText();
+
+            if (!secondarySearchColumn.equalsIgnoreCase("")){
+                xpathValue = xpathBase + currentRow + secondarySearchColumn;
+                LOGGER.debug( "xpath " + xpathValue );
+                virtualSecondarySearchColumn = itemsResultSearch.findElement(By.xpath(xpathValue));
+                LOGGER.debug("New Item found secondarySearchColumn:  " + virtualSecondarySearchColumn.getText());
+                searchedSecondaryCellValue = virtualSecondarySearchColumn.getText();
+            }
+
             LOGGER.info("The search item is:  " + descriptionItem);
-            if (virtualCellDescriptionMolecule.getText().trim().equalsIgnoreCase(descriptionItem) || virtualCellDescription.getText().trim().equalsIgnoreCase(descriptionItem)){
-                LOGGER.info("Found item with description: " + virtualCellDescriptionMolecule.getText() + " in the " + tableDTO.getElementKey());
-                LOGGER.info("Found item with description: " + virtualCellDescription.getText() + " in the " + tableDTO.getElementKey());
+            if (searchedMainCellValue.trim().equalsIgnoreCase(descriptionItem) || searchedSecondaryCellValue.trim().equalsIgnoreCase(descriptionItem)){
+                LOGGER.info("Found item with description: " + searchedMainCellValue + " in the " + tableDTO.getElementKey());
+                LOGGER.info("Found item with description: " + searchedSecondaryCellValue + " in the " + tableDTO.getElementKey());
                 trRowValue = currentRow;
                 break;
             }
         }
+
         return trRowValue;
     }
 
@@ -114,9 +161,11 @@ public class PageHelper {
     public static String getElementAttributeValue (ElementDTO virtualWebElementDTO, String attribute) throws NotFoundResourceException {
         By elementId = virtualWebElementDTO.getIdElement();
         //WebElement virtualElement =Hooks.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(elementId));
+        LOGGER.debug("Value of ID: " + elementId.toString());
         WebElement virtualElement =Hooks.getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(elementId));
         String  attributeValue;
         attributeValue = virtualElement.getAttribute(attribute.trim());
+        LOGGER.debug("Value of attributeValue: " +attributeValue);
         return attributeValue;
     }
 

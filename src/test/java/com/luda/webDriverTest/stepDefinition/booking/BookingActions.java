@@ -44,57 +44,56 @@ public class BookingActions {
         bookingPage = new BookingPagePOM(Hooks.getWebDriver());
         WebElement itemsResultSearch = bookingPage.getItemsTableResult();
         bookingPage.putItemsWhichDescriptionToCart(itemsResultSearch,itemDescription);
-        TimeUnit.SECONDS.sleep(1);
+        TimeUnit.SECONDS.sleep(2);
     }
 
     @When("^I consult my current cart$")
     public void i_consult_my_current_cart() throws Throwable {
         cartPagePOM = new CartPagePOM(Hooks.getWebDriver());
-        if (!cartPagePOM.isShowing()){
-            bookingPage = new BookingPagePOM(Hooks.getWebDriver());
-            bookingPage.cartButtonClick();
-            TimeUnit.SECONDS.sleep(1);
-        }
+        cartPagePOM.cartShow();
     }
 
     @When("^I hide my current cart$")
     public void i_hide_my_current_cart() throws Throwable {
         cartPagePOM = new CartPagePOM(Hooks.getWebDriver());
-        if (cartPagePOM.isShowing()){
-            bookingPage = new BookingPagePOM(Hooks.getWebDriver());
-            bookingPage.cartButtonClick();
-            TimeUnit.SECONDS.sleep(1);
-        }
+        cartPagePOM.cartHide();
     }
 
-    @And("^I add (\\d+) items of (.+) in the booking$")
-    public void i_add_items_of_in_the_booking(int addMore, String itemDescription) throws Throwable {
+    @And("^I increase (\\d+) items of (.+) in the cart")
+    public void i_increase_items_of_in_the_cart(int addMore, String itemDescription) throws Throwable {
         cartPagePOM = new CartPagePOM(Hooks.getWebDriver());
+        cartPagePOM.cartShow();
         WebElement itemsResultSearch = cartPagePOM.getItemsInCart();
         cartPagePOM.addMoreCurrentItems(itemsResultSearch,itemDescription.trim(),addMore);
         TimeUnit.SECONDS.sleep(1);
+        cartPagePOM.cartHide();
     }
 
-    @And("^I rest (\\d+) items of (.+) in the booking$")
-    public void i_rest_items_of_in_the_booking(int restNum, String itemDescription) throws Throwable {
+    @And("^I decrease (\\d+) items of (.+) in the cart")
+    public void i_rest_decrease_of_in_the_cart(int restNum, String itemDescription) throws Throwable {
         cartPagePOM = new CartPagePOM(Hooks.getWebDriver());
+        cartPagePOM.cartShow();
         WebElement itemsResultSearch = cartPagePOM.getItemsInCart();
         cartPagePOM.restCurrentItems(itemsResultSearch,itemDescription.trim(),restNum);
         TimeUnit.SECONDS.sleep(1);
+        cartPagePOM.cartHide();
     }
 
-    @And("^I remove the (.+) item from the booking$")
-    public void i_remove_the_item_from_the_booking(String itemDescription) throws Throwable {
+    @And("^I remove the (.+) item from the cart")
+    public void i_remove_the_item_from_the_cart(String itemDescription) throws Throwable {
         cartPagePOM = new CartPagePOM(Hooks.getWebDriver());
+        cartPagePOM.cartShow();
         WebElement itemsResultSearch = cartPagePOM.getItemsInCart();
         TimeUnit.SECONDS.sleep(1);
         cartPagePOM.removeItemOfCart(itemsResultSearch, itemDescription.trim());
         TimeUnit.SECONDS.sleep(1);
+        cartPagePOM.cartHide();
     }
 
-    @When("^I remove all items of the booking$")
-    public void i_remove_all_items_of_the_booking() throws Throwable {
+    @When("^I remove all items of the cart")
+    public void i_remove_all_items_of_the_cart() throws Throwable {
         cartPagePOM = new CartPagePOM(Hooks.getWebDriver());
+        cartPagePOM.cartShow();
         WebElement itemsResultSearch = cartPagePOM.getItemsInCart();
         TimeUnit.SECONDS.sleep(1);
         cartPagePOM.removeAllItemOfCart(itemsResultSearch);

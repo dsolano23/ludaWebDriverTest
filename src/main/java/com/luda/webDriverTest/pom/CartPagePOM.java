@@ -1,22 +1,27 @@
 package com.luda.webDriverTest.pom;
 
+import com.luda.webDriverTest.beans.CartIemTableDTO;
+import com.luda.webDriverTest.beans.ElementDTO;
+import com.luda.webDriverTest.enviroment.Hooks;
 import com.luda.webDriverTest.exception.NotFoundResourceException;
-import com.luda.webDriverTest.utilsType.WebSelector;
-import com.luda.webDriverTest.utilsType.constans.*;
+import com.luda.webDriverTest.utilsType.PageHelper;
+import com.luda.webDriverTest.utilsType.constans.CartPanelKeys;
+import com.luda.webDriverTest.utilsType.constans.ElementAttributeKeys;
+import com.luda.webDriverTest.utilsType.constans.WebComponentKeys;
+import com.luda.webDriverTest.utilsType.constans.WebElementTypesKeys;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.awt.image.VolatileImage;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import static com.luda.webDriverTest.utilsType.constans.ElementAttributeKeys.baseCurrentRow;
 import static java.lang.Integer.parseInt;
 
 public class CartPagePOM {
     private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(CartPagePOM.class);
+    BookingPagePOM bookingPage;
     private String keyWebComponent =  WebComponentKeys.cartPanel.name();
     private String containerTypeElement = WebElementTypesKeys.container.name();
     private String tableTypeElement = WebElementTypesKeys.table.name();
@@ -24,7 +29,7 @@ public class CartPagePOM {
     private String labelTypeElement = WebElementTypesKeys.label.name();
 
     private Hashtable<String, ElementDTO> webElementsList = new Hashtable<String, ElementDTO>();
-    private Hashtable<String, TableDTO> tableList = new Hashtable<String, TableDTO>();
+    private Hashtable<String, CartIemTableDTO> tableList = new Hashtable<String, CartIemTableDTO>();
     private String cartPanelKey = CartPanelKeys.cartPanel.name();
     private String cartItemsTableKey = CartPanelKeys.cartItemsTable.name();
     private String cartPharmacyTableKey = CartPanelKeys.cartPharmacyTable.name();
@@ -42,20 +47,17 @@ public class CartPagePOM {
 
     private void loadByIdElements() throws NotFoundResourceException {
         Hashtable<String, ElementDTO> virtualWebElements = new Hashtable<String, ElementDTO>();
-        Hashtable<String, TableDTO> virtualTables = new Hashtable<String, TableDTO>();
-        TableDTO virtualTableDTO;
-        virtualWebElements.put(cartPanelKey,PageHelper.createNewWebElementDTO(keyWebComponent,cartPanelKey,containerTypeElement));
+        Hashtable<String, CartIemTableDTO> virtualTables = new Hashtable<String, CartIemTableDTO>();
+        CartIemTableDTO virtualTableDTO;
+        virtualWebElements.put(cartPanelKey, PageHelper.createNewWebElementDTO(keyWebComponent,cartPanelKey,containerTypeElement));
         virtualWebElements.put(cartItemsTableKey,PageHelper.createNewWebElementDTO(keyWebComponent,cartItemsTableKey,tableTypeElement));
-        virtualTableDTO = PageHelper.createNewTableDTO(keyWebComponent, cartItemsTableKey);
-        String columnActions = WebSelector.getElementAttribute(keyWebComponent, cartItemsTableKey, ElementAttributeKeys.columnActionsCode.name());
-        virtualTableDTO.setColumnActions(columnActions);
+        virtualTableDTO = PageHelper.createNewCartIemTableDTO(keyWebComponent, cartItemsTableKey);
         virtualTables.put(cartItemsTableKey,virtualTableDTO);
         virtualWebElements.put(cartPharmacyTableKey,PageHelper.createNewWebElementDTO(keyWebComponent,cartPharmacyTableKey,tableTypeElement));
         virtualWebElements.put(cartButtonItemCountIncreaseKey,PageHelper.createNewWebElementDTO(keyWebComponent,cartButtonItemCountIncreaseKey,buttonTypeElement));
         virtualWebElements.put(cartButtonItemCountReduceKey,PageHelper.createNewWebElementDTO(keyWebComponent,cartButtonItemCountReduceKey,buttonTypeElement));
         virtualWebElements.put(cartLabelItemCountKey,PageHelper.createNewWebElementDTO(keyWebComponent,cartLabelItemCountKey,labelTypeElement));
         virtualWebElements.put(cartButtonItemCountRemoveKey,PageHelper.createNewWebElementDTO(keyWebComponent,cartButtonItemCountRemoveKey,buttonTypeElement));
-
         setTableList(virtualTables);
         setWebElementsList(virtualWebElements);
     }
@@ -66,6 +68,22 @@ public class CartPagePOM {
         for (String key : virtualWebElementsAtrList.keySet()) {
             virtualWebElementDTO = virtualWebElementsAtrList.get(key);
             this.updateWebElementAtrList(key,virtualWebElementDTO);
+        }
+    }
+
+    public void cartShow() throws NotFoundResourceException, InterruptedException {
+        if (!isShowing()){
+            bookingPage = new BookingPagePOM(Hooks.getWebDriver());
+            bookingPage.cartButtonClick();
+            TimeUnit.SECONDS.sleep(1);
+        }
+    }
+
+    public void cartHide() throws NotFoundResourceException, InterruptedException {
+        if (isShowing()){
+            bookingPage = new BookingPagePOM(Hooks.getWebDriver());
+            bookingPage.cartButtonClick();
+            TimeUnit.SECONDS.sleep(1);
         }
     }
 
@@ -97,7 +115,7 @@ public class CartPagePOM {
     }
 
     private WebElement findActionCell (WebElement itemsResultSearch, String descriptionItem) throws NotFoundResourceException {
-        TableDTO virtualTableDTO = this.getTableList().get(cartItemsTableKey);
+        CartIemTableDTO virtualTableDTO = this.getTableList().get(cartItemsTableKey);
         String xpathBase = virtualTableDTO.getXpathBase();
         String columnActions = virtualTableDTO.getColumnActions();
         WebElement actionCell = null;
@@ -111,11 +129,10 @@ public class CartPagePOM {
 
     public boolean isItemInCart(WebElement itemsResultSearch, String descriptionItem) throws NotFoundResourceException, InterruptedException {
         boolean isItemInTheCart = false;
-        TableDTO virtualTableDTO = this.getTableList().get(cartItemsTableKey);
+        CartIemTableDTO virtualTableDTO = this.getTableList().get(cartItemsTableKey);
         String xpathBase = virtualTableDTO.getXpathBase();
-        String columnDescriptionMolecule = virtualTableDTO.getColumnDescriptionMolecule();
-        String columnDescription = virtualTableDTO.getColumnDescription();
-
+        String columnDescriptionMolecule = virtualTableDTO.getItemDescriptionMolecule();
+        String columnDescription = virtualTableDTO.getItemDescription();
         String trRowValue = PageHelper.findItemRowNum(itemsResultSearch,descriptionItem, virtualTableDTO);
 
         if (!trRowValue.equalsIgnoreCase("")){
@@ -159,7 +176,7 @@ public class CartPagePOM {
 
     public void removeAllItemOfCart(WebElement itemsResultSearch) throws NotFoundResourceException, InterruptedException {
         ElementDTO virtualWebElementDTO = this.getWebElementsList().get(cartButtonItemCountRemoveKey);
-        TableDTO virtualTableDTO = this.getTableList().get(cartItemsTableKey);
+        CartIemTableDTO virtualTableDTO = this.getTableList().get(cartItemsTableKey);
         List<WebElement> rows  = itemsResultSearch.findElements(By.tagName("tr"));
         String xpathBase = virtualTableDTO.getXpathBase();
         String baseCurrentRow = virtualTableDTO.getBaseCurrentRow();
@@ -203,11 +220,11 @@ public class CartPagePOM {
         this.getWebElementsList().replace(webElementKey,webElementArt);
     }
 
-    public Hashtable<String, TableDTO> getTableList() {
+    public Hashtable<String, CartIemTableDTO> getTableList() {
         return tableList;
     }
 
-    public void setTableList(Hashtable<String, TableDTO> tableList) {
+    public void setTableList(Hashtable<String, CartIemTableDTO> tableList) {
         this.tableList = tableList;
     }
 }

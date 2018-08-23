@@ -2,38 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c307bae3-9c01-4825-addb-c88cb6ddd38e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/BookingPagePOM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/CartPagePOM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/EndBookingPagePOM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/TableDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/CartPanelKeys.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/EndBookingPanelKeys.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webElementsProperties/cartPanel.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webElementsProperties/endBookingPanel.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/02_Booking/02_01_LocationUser.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/02_Booking/02_02_ItemStockListManagement.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/02_Booking/02_03_ItemCartListManagement.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/CartIemTableDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/EndBookingItemTableDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/EndBookingPharmacyTableDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/StockItemsTableDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/02_BookingManagement/04_PharmacyManagement.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/Hooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/CreateUserPagePOM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/ElementDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/ElementDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/userDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/Environment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/Environment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/BookingPagePOM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/BookingPagePOM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/CartPagePOM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/CartPagePOM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/CreateUserPagePOM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/CreateUserPagePOM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/ElementDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/ElementDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/EndBookingPagePOM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/EndBookingPagePOM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/LoginPagePOM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/LoginPagePOM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/PageHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/PageHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/PageHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/PageHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/TableDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/BaseTableDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/CheckMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/CheckMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/WebSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/WebSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/BookingPanelKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/BookingPanelKeys.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/ElementAttributeKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/ElementAttributeKeys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/WebComponentKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/WebComponentKeys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/WebElementTypesKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/WebElementTypesKeys.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/webElementsProperties/bookingPanel.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webElementsProperties/bookingPanel.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/webElementsProperties/createFinalUserForm.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webElementsProperties/createFinalUserForm.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webElementsProperties/cartPanel.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webElementsProperties/cartPanel.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webElementsProperties/endBookingPanel.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webElementsProperties/endBookingPanel.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/cucumberRunner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/cucumberRunner/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/PrePostActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/PrePostActions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/booking/BookingActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/booking/BookingActions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/booking/BookingValidations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/booking/BookingValidations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/login/LoginActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/login/LoginActions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/login/LoginValidations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/login/LoginValidations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/utilsType/FileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/utilsType/FileWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/00_HappyPath/00_01_Reservation.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/00_HappyPath/00_01_Reservation.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/01_UserManager/01_Create_User.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/01_UserManager/01_Create_User.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/02_Booking/02_01_LocationUser.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/02_BookingManagement/01_LocationUser.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/02_Booking/02_02_ItemStockListManagement.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/02_BookingManagement/02_ItemStockListManagement.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/02_Booking/02_03_ItemCartListManagement.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/02_BookingManagement/03_ItemCartListManagement.feature" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,36 +69,36 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="6" />
-          <entry key="feature" value="47" />
-          <entry key="java" value="279" />
-          <entry key="properties" value="59" />
+          <entry key="feature" value="72" />
+          <entry key="java" value="333" />
+          <entry key="properties" value="73" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="6" />
-          <entry key="Cucumber" value="47" />
-          <entry key="JAVA" value="279" />
-          <entry key="Properties" value="59" />
+          <entry key="Cucumber" value="72" />
+          <entry key="JAVA" value="333" />
+          <entry key="Properties" value="73" />
           <entry key="XML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="137" />
-          <entry key="feature" value="1278" />
-          <entry key="java" value="17103" />
-          <entry key="properties" value="1167" />
+          <entry key="dummy" value="147" />
+          <entry key="feature" value="1529" />
+          <entry key="java" value="18388" />
+          <entry key="properties" value="1171" />
           <entry key="xml" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Cucumber" value="1278" />
-          <entry key="JAVA" value="17102" />
-          <entry key="PLAIN_TEXT" value="137" />
-          <entry key="Properties" value="1167" />
+          <entry key="Cucumber" value="1529" />
+          <entry key="JAVA" value="18387" />
+          <entry key="PLAIN_TEXT" value="147" />
+          <entry key="Properties" value="1171" />
           <entry key="RegExp" value="1" />
           <entry key="XML" value="10" />
         </counts>
@@ -111,52 +110,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/booking/BookingValidations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="168" selection-start-line="168" selection-end-line="168" />
+            <state relative-caret-position="269">
+              <caret line="196" column="76" selection-start-line="196" selection-start-column="76" selection-end-line="196" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/PageHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="141" selection-start-line="141" selection-end-line="141" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/booking/BookingActions.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="99" column="31" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/BookingPagePOM.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="188" selection-start-line="188" selection-end-line="188" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#11205#11206#0" expanded="true" />
-                <element signature="e#11243#11244#0" expanded="true" />
-                <element signature="e#12200#12201#0" expanded="true" />
-                <element signature="e#12232#12233#0" expanded="true" />
-                <element signature="e#11626#11627#0" expanded="true" />
-                <element signature="e#11668#11669#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -165,15 +122,36 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/EndBookingPagePOM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="143" column="12" selection-start-line="143" selection-start-column="12" selection-end-line="143" selection-end-column="12" />
+            <state relative-caret-position="163">
+              <caret line="93" column="19" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
               <folding>
-                <element signature="e#10845#10846#0" expanded="true" />
-                <element signature="e#10883#10884#0" expanded="true" />
-                <element signature="e#11252#11253#0" expanded="true" />
-                <element signature="e#11284#11285#0" expanded="true" />
-                <element signature="e#11355#11356#0" expanded="true" />
-                <element signature="e#11397#11398#0" expanded="true" />
+                <element signature="e#1828#1864#0" expanded="true" />
+                <element signature="e#3240#3276#0" expanded="true" />
+                <element signature="e#9264#9265#0" expanded="true" />
+                <element signature="e#9302#9303#0" expanded="true" />
+                <element signature="e#9696#9697#0" expanded="true" />
+                <element signature="e#9739#9740#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/features/02_BookingManagement/04_PharmacyManagement.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="394">
+              <caret line="114" column="87" selection-start-line="114" selection-start-column="87" selection-end-line="114" selection-end-column="87" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/PageHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="101" selection-start-line="101" selection-end-line="101" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -182,29 +160,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/cucumberRunner/TestRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+            <state relative-caret-position="422">
+              <caret line="26" column="53" lean-forward="true" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/features/02_Booking/02_03_ItemCartListManagement.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="85" column="4" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/CartPagePOM.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="172" column="50" lean-forward="true" selection-start-line="172" selection-start-column="50" selection-end-line="172" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -236,7 +196,21 @@
       <find>style</find>
       <find>offer-panel-primary</find>
       <find>findItemRowNum</find>
+      <find>add a item</find>
+      <find>a item</find>
+      <find>a i</find>
+      <find>from the booking</find>
+      <find>of the booking</find>
+      <find>in the booking</find>
+      <find>BaseTableDTO</find>
+      <find>Code</find>
     </findStrings>
+    <replaceStrings>
+      <replace>an item</replace>
+      <replace>from the cart</replace>
+      <replace>of the cart</replace>
+      <replace>in the cart</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -244,21 +218,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/CreateFinalUserFromKeys.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/LoginFormKeys.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/BookingActions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/loginPage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/loginPagePOM.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/features/01_UserManager/01_Login_Test.feature" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/Enviroment.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/enviroment/Environment.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/cucumberRunner/PrePostActions.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/LoginSteps.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/login/LoginSteps.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/webElementsProperties/loginForm.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/WebElemen.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/WebElement.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/WebElementAtr.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/LoginPagePO.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/login/LoginValidations.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/LoginPagePOM.java" />
@@ -281,20 +240,35 @@
         <option value="$PROJECT_DIR$/src/test/resources/features/02_Booking/02_02_ItemListManagement.feature" />
         <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/login/LoginActions.java" />
         <option value="$PROJECT_DIR$/src/test/resources/features/02_Booking/02_02_ItemStockListManagement.feature" />
-        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/booking/BookingValidations.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/booking/BookingActions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/TableDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/webElementsProperties/cartPanel.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/ElementAttributeKeys.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/webElementsProperties/bookingPanel.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/PageHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/BookingPagePOM.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/webElementsProperties/endBookingPanel.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/EndBookingPagePOM.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/features/00_HappyPath/00_01_Reservation.feature" />
-        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/cucumberRunner/TestRunner.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/CartPagePOM.java" />
         <option value="$PROJECT_DIR$/src/test/resources/features/02_Booking/02_03_ItemCartListManagement.feature" />
+        <option value="$PROJECT_DIR$/src/test/resources/features/02_Booking/04_PharmacyManagement.feature" />
+        <option value="$PROJECT_DIR$/src/test/resources/features/02_BookingManagement/01_LocationUser.feature" />
+        <option value="$PROJECT_DIR$/src/test/resources/features/00_HappyPath/00_01_Reservation.feature" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/TableDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/TableDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/StockIemTableDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/EndBookingPhamacyTableDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/EndBookingPharmacyTableDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/StockIemsTableDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/StockItemsTableDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/EndBookingItemTableDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/ElementAttributeKeys.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/CartIemTableDTO.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/features/02_BookingManagement/02_ItemStockListManagement.feature" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/PageHelper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/booking/BookingActions.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/features/02_BookingManagement/03_ItemCartListManagement.feature" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/CartPagePOM.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/BaseTableDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/BookingPagePOM.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/EndBookingPagePOM.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/cucumberRunner/TestRunner.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/PageHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/webElementsProperties/bookingPanel.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/webElementsProperties/cartPanel.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/webElementsProperties/endBookingPanel.properties" />
+        <option value="$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/booking/BookingValidations.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/features/02_BookingManagement/04_PharmacyManagement.feature" />
       </list>
     </option>
   </component>
@@ -638,7 +612,7 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="features" type="462c0819:PsiDirectoryNode" />
-              <item name="02_Booking" type="462c0819:PsiDirectoryNode" />
+              <item name="02_BookingManagement" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ludaWebDriverTest" type="b2602c69:ProjectViewProjectNode" />
@@ -738,7 +712,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534924989228" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535010058065" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/luda/webDriverTest" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../amazonTest" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -748,22 +722,11 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\david\sourcecode\ludaWebDriverTest\src\test\resources\features" />
-      <recent name="C:\Users\david\sourcecode\ludaWebDriverTest\src\main\resources\webElementsProperties" />
-      <recent name="C:\Users\david\sourcecode\ludaWebDriverTest\src\test\resources\features\00_UserManager" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.luda.webDriverTest.utilsType" />
+      <recent name="com.luda.webDriverTest.beans" />
       <recent name="com.luda.webDriverTest.stepDefinition.login" />
       <recent name="com.luda.webDriverTest.stepDefinition" />
-      <recent name="com.luda.webDriverTest.stepDefinition.booking" />
-      <recent name="com.luda.webDriverTest.utilsType" />
-      <recent name="com.luda.webDriverTest.utilsType.constans" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.luda.webDriverTest.pom" />
-      <recent name="com.luda.webDriverTest.utilsType.constans" />
-      <recent name="com.luda.webDriverTest.stepDefinition.login" />
       <recent name="com.luda.webDriverTest.stepDefinition.booking" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -771,6 +734,18 @@
       <recent name="C:\Users\david\sourcecode\ludaWebDriverTest\src\main\resources\webElementsProperties" />
       <recent name="C:\Users\david\sourcecode\ludaWebDriverTest\src\test\resources\features\00_HappyPath" />
       <recent name="C:\Users\david\sourcecode\ludaWebDriverTest\src\test\resources\features" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.luda.webDriverTest.beans" />
+      <recent name="com.luda.webDriverTest.pom" />
+      <recent name="com.luda.webDriverTest.utilsType.constans" />
+      <recent name="com.luda.webDriverTest.stepDefinition.login" />
+      <recent name="com.luda.webDriverTest.stepDefinition.booking" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\david\sourcecode\ludaWebDriverTest\src\test\resources\features" />
+      <recent name="C:\Users\david\sourcecode\ludaWebDriverTest\src\main\resources\webElementsProperties" />
+      <recent name="C:\Users\david\sourcecode\ludaWebDriverTest\src\test\resources\features\00_UserManager" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -843,44 +818,44 @@
       <workItem from="1534745051985" duration="40281000" />
       <workItem from="1534831785736" duration="36455000" />
       <workItem from="1534874832359" duration="3013000" />
-      <workItem from="1534917366959" duration="7762000" />
+      <workItem from="1534917366959" duration="47461000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestRunner - 2018.08.22 at 09h 44m 57s.xml">
+    <history-entry file="TestRunner - 2018.08.22 at 22h 34m 23s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRunner - 2018.08.22 at 09h 46m 13s.xml">
+    <history-entry file="TestRunner - 2018.08.22 at 22h 35m 51s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRunner - 2018.08.22 at 09h 49m 28s.xml">
+    <history-entry file="TestRunner - 2018.08.23 at 09h 16m 33s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRunner - 2018.08.22 at 09h 52m 24s.xml">
+    <history-entry file="TestRunner - 2018.08.23 at 09h 18m 54s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRunner - 2018.08.22 at 09h 53m 09s.xml">
+    <history-entry file="TestRunner - 2018.08.23 at 09h 28m 37s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRunner - 2018.08.22 at 09h 54m 27s.xml">
+    <history-entry file="TestRunner - 2018.08.23 at 09h 33m 55s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRunner - 2018.08.22 at 09h 55m 18s.xml">
+    <history-entry file="TestRunner - 2018.08.23 at 09h 35m 49s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRunner - 2018.08.22 at 09h 56m 58s.xml">
+    <history-entry file="TestRunner - 2018.08.23 at 09h 36m 45s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRunner - 2018.08.22 at 10h 01m 31s.xml">
+    <history-entry file="TestRunner - 2018.08.23 at 09h 37m 27s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRunner - 2018.08.22 at 10h 03m 41s.xml">
+    <history-entry file="TestRunner - 2018.08.23 at 09h 39m 31s.xml">
       <configuration name="TestRunner" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="400906000" />
+    <option name="totallyTimeSpent" value="440605000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -891,7 +866,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.18336888" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.21428572" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="1" />
@@ -899,7 +874,7 @@
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49946696" visible="true" weight="0.37703142" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49946696" visible="true" weight="0.41386783" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
@@ -921,7 +896,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.18336888" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.21428572" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="1" />
@@ -929,7 +904,7 @@
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49946696" visible="true" weight="0.37703142" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49946696" visible="true" weight="0.37703142" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
@@ -953,29 +928,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/KeyElementsCreateUserPage.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/util/Properties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2778">
-          <caret line="340" column="8" selection-start-line="340" selection-start-column="8" selection-end-line="340" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/utilsType/FileWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="61" column="40" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/WebElementKeys.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.13.0/selenium-api-3.13.0.jar!/org/openqa/selenium/Keys.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1048,13 +1000,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/createFinalUserForm.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/userDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1062,27 +1007,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/loginForm.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/LoginPagePOM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
           <caret line="89" column="96" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="96" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/CreateUserPagePOM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="138" column="57" selection-start-line="138" selection-start-column="57" selection-end-line="138" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1100,13 +1028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/WebSelector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="114" column="70" selection-start-line="114" selection-start-column="70" selection-end-line="114" selection-end-column="70" />
         </state>
       </provider>
     </entry>
@@ -1157,24 +1078,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/ElementDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.13.0/selenium-api-3.13.0.jar!/org/openqa/selenium/WebElement.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/features/02_Booking/02_01_LocationUser.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1195,120 +1102,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/cartPanel.properties">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/features/00_HappyPath/00_01_Reservation.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="40" lean-forward="true" selection-start-line="2" selection-end-line="8" selection-end-column="40" />
+        <state relative-caret-position="1564">
+          <caret line="92" column="2" selection-start-line="92" selection-start-column="2" selection-end-line="92" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/TableDTO.java">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/features/02_BookingManagement/01_LocationUser.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+        <state relative-caret-position="34">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/ElementDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/EndBookingItemTableDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/features/02_BookingManagement/02_ItemStockListManagement.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="54" column="35" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/StockItemsTableDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/constans/ElementAttributeKeys.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="272">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/bookingPanel.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/CartIemTableDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/PageHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="141" selection-start-line="141" selection-end-line="141" />
+        <state relative-caret-position="170">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#519#520#0" expanded="true" />
+            <element signature="e#568#569#0" expanded="true" />
+            <element signature="e#615#616#0" expanded="true" />
+            <element signature="e#669#670#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/BookingPagePOM.java">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/features/02_BookingManagement/03_ItemCartListManagement.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="188" selection-start-line="188" selection-end-line="188" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#11205#11206#0" expanded="true" />
-            <element signature="e#11243#11244#0" expanded="true" />
-            <element signature="e#12200#12201#0" expanded="true" />
-            <element signature="e#12232#12233#0" expanded="true" />
-            <element signature="e#11626#11627#0" expanded="true" />
-            <element signature="e#11668#11669#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/features/00_HappyPath/00_01_Reservation.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="819">
-          <caret line="126" column="94" lean-forward="true" selection-start-line="126" selection-start-column="94" selection-end-line="126" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/endBookingPanel.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/booking/BookingValidations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="168" selection-start-line="168" selection-end-line="168" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/EndBookingPagePOM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="143" column="12" selection-start-line="143" selection-start-column="12" selection-end-line="143" selection-end-column="12" />
-          <folding>
-            <element signature="e#10845#10846#0" expanded="true" />
-            <element signature="e#10883#10884#0" expanded="true" />
-            <element signature="e#11252#11253#0" expanded="true" />
-            <element signature="e#11284#11285#0" expanded="true" />
-            <element signature="e#11355#11356#0" expanded="true" />
-            <element signature="e#11397#11398#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/features/02_Booking/02_02_ItemStockListManagement.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-388">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/cucumberRunner/TestRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="680">
+          <caret line="55" selection-start-line="55" selection-end-line="55" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/booking/BookingActions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="99" column="31" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
+        <state relative-caret-position="395">
+          <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1317,15 +1183,146 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/CartPagePOM.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="172" column="50" lean-forward="true" selection-start-line="172" selection-start-column="50" selection-end-line="172" selection-end-column="50" />
+        <state relative-caret-position="378">
+          <caret line="75" column="42" lean-forward="true" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
+          <folding>
+            <element signature="e#1275#1300#0" expanded="true" />
+            <element signature="e#2351#2376#0" expanded="true" />
+            <element signature="e#11132#11133#0" expanded="true" />
+            <element signature="e#11170#11171#0" expanded="true" />
+            <element signature="e#11546#11547#0" expanded="true" />
+            <element signature="e#11578#11579#0" expanded="true" />
+            <element signature="e#11656#11657#0" expanded="true" />
+            <element signature="e#11698#11699#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/features/02_Booking/02_03_ItemCartListManagement.feature">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/CreateUserPagePOM.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="85" column="4" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="4" />
+        <state relative-caret-position="428">
+          <caret line="133" column="56" lean-forward="true" selection-start-line="133" selection-start-column="56" selection-end-line="133" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/EndBookingPharmacyTableDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/beans/BaseTableDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/WebSelector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="114" column="15" lean-forward="true" selection-start-line="114" selection-start-column="15" selection-end-line="114" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/BookingPagePOM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1110">
+          <caret line="141" column="87" selection-start-line="141" selection-start-column="87" selection-end-line="141" selection-end-column="87" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/cucumberRunner/TestRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="26" column="53" lean-forward="true" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/utilsType/PageHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/bookingPanel.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/cartPanel.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="63" lean-forward="true" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/createFinalUserForm.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/endBookingPanel.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/webElementsProperties/loginForm.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luda/webDriverTest/pom/EndBookingPagePOM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="93" column="19" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
+          <folding>
+            <element signature="e#1828#1864#0" expanded="true" />
+            <element signature="e#3240#3276#0" expanded="true" />
+            <element signature="e#9264#9265#0" expanded="true" />
+            <element signature="e#9302#9303#0" expanded="true" />
+            <element signature="e#9696#9697#0" expanded="true" />
+            <element signature="e#9739#9740#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/luda/webDriverTest/stepDefinition/booking/BookingValidations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="196" column="76" selection-start-line="196" selection-start-column="76" selection-end-line="196" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/features/02_BookingManagement/04_PharmacyManagement.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="114" column="87" selection-start-line="114" selection-start-column="87" selection-end-line="114" selection-end-column="87" />
         </state>
       </provider>
     </entry>

@@ -13,10 +13,12 @@ public enum ElementAttributeKeys {
     xpathBase,
     firstRow,
     baseCurrentRow,
-    columnDescriptionCode,
-    columnDescriptionMoleculeCode,
-    columnAmountCode,
-    columnFamilyCode,
-    columnPrescriptionCode,
-    columnActionsCode
+    columnDescriptionItem,
+    columnDescriptionMolecule,
+    columnAmount,
+    columnFamily,
+    columnPrescription,
+    columnActions,
+    columnPharmacyName,
+    columnPharmacyAddress
     }

@@ -55,7 +55,7 @@ Feature: Happy Path Reservation
     And I put the item ESPIDIFEN 400 mg COMPRIMIDOS RECUBIERTOS , 30 comprimidos to the cart
     And I put the item ESPIDIFEN 600 MG GRANULADO PARA SOLUCION ORAL SABOR COLA-LIMON , 20 sobres to the cart
     When I consult my current cart
-    And I add 5 items of ESPIDIFEN 600 MG 40 SOBRES ALBARICOQUE in the booking
+    And I increase 5 items of ESPIDIFEN 600 MG 40 SOBRES ALBARICOQUE in the cart
     Then I have a total of 6 ESPIDIFEN 600 MG 40 SOBRES ALBARICOQUE items in my cart
 
   @happyPathReservation06
@@ -65,8 +65,8 @@ Feature: Happy Path Reservation
     And I put the item ESPIDIFEN 400 mg COMPRIMIDOS RECUBIERTOS , 30 comprimidos to the cart
     And I put the item ESPIDIFEN 600 MG GRANULADO PARA SOLUCION ORAL SABOR COLA-LIMON , 20 sobres to the cart
     When I consult my current cart
-    And I add 5 items of ESPIDIFEN 600 MG 40 SOBRES ALBARICOQUE in the booking
-    And I rest 4 items of ESPIDIFEN 600 MG 40 SOBRES ALBARICOQUE in the booking
+    And I increase 5 items of ESPIDIFEN 600 MG 40 SOBRES ALBARICOQUE in the cart
+    And I decrease 4 items of ESPIDIFEN 600 MG 40 SOBRES ALBARICOQUE in the cart
     Then I have a total of 2 ESPIDIFEN 600 MG 40 SOBRES ALBARICOQUE items in my cart
 
   @happyPathReservation07
@@ -76,7 +76,7 @@ Feature: Happy Path Reservation
     And I put the item ESPIDIFEN 400 mg COMPRIMIDOS RECUBIERTOS , 30 comprimidos to the cart
     And I put the item ESPIDIFEN 600 MG GRANULADO PARA SOLUCION ORAL SABOR COLA-LIMON , 20 sobres to the cart
     When I consult my current cart
-    And I remove the ESPIDIFEN 600 MG 40 SOBRES ALBARICOQUE item from the booking
+    And I remove the ESPIDIFEN 600 MG 40 SOBRES ALBARICOQUE item from the cart
     Then I have a total of 0 ESPIDIFEN 600 MG 40 SOBRES ALBARICOQUE items in my cart
     And My cart have 2 items added
 
@@ -87,9 +87,9 @@ Feature: Happy Path Reservation
     And I put the item ESPIDIFEN 400 mg COMPRIMIDOS RECUBIERTOS , 30 comprimidos to the cart
     And I put the item ESPIDIFEN 600 MG GRANULADO PARA SOLUCION ORAL SABOR COLA-LIMON , 20 sobres to the cart
     When I consult my current cart
-    And I remove the ESPIDIFEN 600 MG 40 SOBRES ALBARICOQUE item from the booking
-    And I remove the ESPIDIFEN 400 mg COMPRIMIDOS RECUBIERTOS item from the booking
-    And I remove the ESPIDIFEN 600 MG GRANULADO PARA SOLUCION ORAL SABOR COLA-LIMON item from the booking
+    And I remove the ESPIDIFEN 600 MG 40 SOBRES ALBARICOQUE item from the cart
+    And I remove the ESPIDIFEN 400 mg COMPRIMIDOS RECUBIERTOS item from the cart
+    And I remove the ESPIDIFEN 600 MG GRANULADO PARA SOLUCION ORAL SABOR COLA-LIMON item from the cart
     Then I have a total of 0 ESPIDIFEN 600 MG 40 SOBRES ALBARICOQUE items in my cart
     And My cart have 0 items added
 
@@ -105,7 +105,7 @@ Feature: Happy Path Reservation
     And I put the item ESPIDIFEN 600 mg GRANULADO PARA SOLUCION ORAL SABOR ALBARICOQUE, 40 sobres to the cart
     And The button continue with the booking is available
     When I consult my current cart
-    And I remove the ESPIDIFEN 600 MG 40 SOBRES ALBARICOQUE item from the booking
+    And I remove the ESPIDIFEN 600 MG 40 SOBRES ALBARICOQUE item from the cart
     And The button continue with the booking is not available
 
   @happyPathReservation11
@@ -115,7 +115,7 @@ Feature: Happy Path Reservation
     And I put the item ESPIDIFEN 400 mg COMPRIMIDOS RECUBIERTOS , 30 comprimidos to the cart
     And The button continue with the booking is available
     When I consult my current cart
-    And I remove the ESPIDIFEN 600 MG 40 SOBRES ALBARICOQUE item from the booking
+    And I remove the ESPIDIFEN 600 MG 40 SOBRES ALBARICOQUE item from the cart
     And The button continue with the booking is available
 
   @happyPathReservation12
@@ -124,7 +124,7 @@ Feature: Happy Path Reservation
     Given I find the item with the description ESPIDIFEN
     And I put the item ESPIDIFEN 600 mg GRANULADO PARA SOLUCION ORAL SABOR MENTA EFG, 20 sobres to the cart
     When I consult my current cart
-    And I add 5 items of ESPIDIFEN 600 mg GRANULADO PARA SOLUCION ORAL SABOR MENTA EFG, 20 sobres in the booking
+    And I increase 5 items of ESPIDIFEN 600 mg GRANULADO PARA SOLUCION ORAL SABOR MENTA EFG, 20 sobres in the cart
     When I hide my current cart
     Given I find the item with the description BUST
     And I put the item +BUST SERUM 100 ML to the cart

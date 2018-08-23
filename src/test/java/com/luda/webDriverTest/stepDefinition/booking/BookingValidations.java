@@ -134,6 +134,7 @@ public class BookingValidations {
     @Then("^The (.+) item (.+) in the cart$")
     public void the_item_in_the_cart(String itemDescription, String be) throws Throwable {
         cartPagePOM = new CartPagePOM(Hooks.getWebDriver());
+        cartPagePOM.cartShow();
         WebElement itemsResultSearch = cartPagePOM.getItemsInCart();
         Boolean resultReceived = cartPagePOM.isItemInCart(itemsResultSearch,itemDescription);
         Boolean resultExpected = null;
@@ -150,6 +151,7 @@ public class BookingValidations {
     @Then("^I have a total of (\\d+) (.+) items in my cart$")
     public void i_have_a_total_of_items_in_my_reserve(int totalItems, String itemDescription) throws Throwable {
         cartPagePOM = new CartPagePOM(Hooks.getWebDriver());
+        cartPagePOM.cartShow();
         WebElement itemsResultSearch = cartPagePOM.getItemsInCart();
         int resultReceived;
         if (cartPagePOM.isItemInCart(itemsResultSearch,itemDescription)){
@@ -172,7 +174,7 @@ public class BookingValidations {
         if ( will.equalsIgnoreCase("will")){
             resultExpected = true;
 
-        }else if ( will.equalsIgnoreCase("not will")){
+        }else if ( will.equalsIgnoreCase("will not")){
             resultExpected = false;
         }
         String assertTrace = " The endBooking panel " + will + " be shown to me - resultReceived:" + resultReceived +" & Expected: " + resultExpected;
@@ -186,6 +188,16 @@ public class BookingValidations {
         int resultReceived = endBookingPagePOM.totalItemInEndBooking(itemsResultSearch,itemDescription);
         int resultExpected = totalItems;
         String assertTrace = " I have a total of " + totalItems + " " + itemDescription + " items in the endBooking panel - Received: " + resultReceived +" & Expected: " + resultExpected;
+        Assert.assertEquals(assertTrace, resultExpected, resultReceived);
+    }
+
+    @Then("^(.+) is the default pharmacy selected in the endBooking panel$")
+    public void is_the_default_pharmacy_selected_in_the_endbooking_panel(String pharmacyName) throws Throwable {
+        endBookingPagePOM = new EndBookingPagePOM(Hooks.getWebDriver());
+        WebElement itemsResultSearch = endBookingPagePOM.getPharmacyTable();
+        Boolean resultReceived = endBookingPagePOM.isPharmacySelected(itemsResultSearch, pharmacyName);
+        Boolean resultExpected = true;
+        String assertTrace = pharmacyName + " is the default pharmacy selected in the endBooking panel - Received: " + resultReceived +" & Expected: " + resultExpected;
         Assert.assertEquals(assertTrace, resultExpected, resultReceived);
     }
 }
